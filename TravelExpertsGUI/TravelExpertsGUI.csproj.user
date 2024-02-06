@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddModifyProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddModifyPS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddModifySuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAddMofidyPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmProductsSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmSuppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

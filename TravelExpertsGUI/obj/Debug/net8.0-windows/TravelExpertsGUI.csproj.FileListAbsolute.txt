@@ -1,0 +1,201 @@
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.exe
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.deps.json
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.runtimeconfig.json
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Castle.Core.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.pdb
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.AssemblyReference.cache
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.Form1.resources
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.GenerateResource.cache
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfoInputs.cache
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfo.cs
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CoreCompileInputs.cache
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CopyComplete
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\refint\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.genruntimeconfig.cache
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\ref\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmPackages.resources
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmStart.resources
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmAddMofidyPackages.resources
+C:\Users\azing\source\repos\test\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmProducts.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.exe
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.deps.json
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.runtimeconfig.json
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Castle.Core.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.pdb
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.AssemblyReference.cache
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.Form1.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmAddMofidyPackages.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmPackages.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmProducts.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmStart.resources
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.GenerateResource.cache
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfoInputs.cache
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfo.cs
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CoreCompileInputs.cache
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CopyComplete
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\refint\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.genruntimeconfig.cache
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\ref\TravelExpertsGUI.dll
+C:\Users\azing\source\repos\RAD - Windows Forms\Workshop 4 Main\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmSuppliers.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.exe
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.deps.json
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.runtimeconfig.json
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Core.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Azure.Identity.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Castle.Core.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Data.SqlClient.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Options.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Extensions.Primitives.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Logging.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Configuration.ConfigurationManager.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Diagnostics.EventLog.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Memory.Data.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Runtime.Caching.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\System.Security.Cryptography.ProtectedData.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\bin\Debug\net8.0-windows\TravelExpertsData.pdb
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.AssemblyReference.cache
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.Form1.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmAddModifyProducts.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmAddMofidyPackages.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmPackages.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmProducts.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmStart.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsMaintenance.frmSuppliers.resources
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.GenerateResource.cache
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfoInputs.cache
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.AssemblyInfo.cs
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CoreCompileInputs.cache
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.csproj.CopyComplete
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\refint\TravelExpertsGUI.dll
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.pdb
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\TravelExpertsGUI.genruntimeconfig.cache
+C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\obj\Debug\net8.0-windows\ref\TravelExpertsGUI.dll

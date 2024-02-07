@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\TravelExpertsGUI.csproj": {}
+    "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\TravelExpertsGUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\TravelExpertsData.csproj": {
+    "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\TravelExpertsData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\TravelExpertsData.csproj",
+        "projectUniqueName": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\TravelExpertsData.csproj",
         "projectName": "TravelExpertsData",
-        "projectPath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\TravelExpertsData.csproj",
+        "projectPath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\TravelExpertsData.csproj",
         "packagesPath": "C:\\Users\\amyro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\obj\\",
+        "outputPath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -84,14 +84,14 @@
         }
       }
     },
-    "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\TravelExpertsGUI.csproj": {
+    "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\TravelExpertsGUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
+        "projectUniqueName": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
         "projectName": "TravelExpertsGUI",
-        "projectPath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
+        "projectPath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
         "packagesPath": "C:\\Users\\amyro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\obj\\",
+        "outputPath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -113,8 +113,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\TravelExpertsData.csproj": {
-                "projectPath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsData\\TravelExpertsData.csproj"
+              "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\TravelExpertsData.csproj": {
+                "projectPath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsData\\TravelExpertsData.csproj"
               }
             }
           }

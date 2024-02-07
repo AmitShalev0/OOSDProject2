@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yiavi3OoAzUCFZezhNs5cEg5XLvOUB+8ajDU9YBDaXrekS+j5k/iJpFkbg6betowBqgz3KH6QOeAexXZofzzCw==",
+  "dgSpecHash": "DMYzBuaniSwe8GQGEuTuSN3mvSzxhwWEHN3990uvZsxrWgfCM/r3f9lN8zrYoveNlTBQXoNkzx+zfv1NiXzflg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\amyro\\OneDrive\\Desktop\\Proj2Try3\\TravelExpertsMaintenance\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
+  "projectFilePath": "C:\\Users\\amyro\\OneDrive\\Documents\\GitHub\\OOSDProject2\\TravelExpertsGUI\\TravelExpertsGUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amyro\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\amyro\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

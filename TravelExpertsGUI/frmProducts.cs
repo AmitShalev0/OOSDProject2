@@ -124,11 +124,57 @@ namespace TravelExpertsMaintenance
                $"Are you sure you want to delete ProdustSupplier {selectedProduct.ProductId}?",
                "Confirm Delete", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
+            
             if (result == DialogResult.Yes)
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
+                    //List<Product> products = db.Products.ToList();
+                    //List<ProductsSupplier> deletingProducts = new List<ProductsSupplier>();
+                    //foreach (Product product in products)
+                    //{
+                    //    ProductsSupplier attachedproducts = new ProductsSupplier();
+                    //    attachedproducts.ProductId = selectedProduct.ProductId;
+                    //    var entityToRemove = db.ProductsSuppliers.FirstOrDefault( ps => ps.ProductId == attachedproducts.ProductId);
+                    //    if (entityToRemove != null)
+                    //    {
+                    //        db.ProductsSuppliers.Remove(entityToRemove);
+                    //        db.SaveChanges();
+                    //    }
+                    //}
+
+
+                    //db.Products.Remove(selectedProduct);
+
+                    
+                    // Retrieve the IDs of related entities
+                    var productSupplierIds = db.ProductsSuppliers
+                        .Where(ps => ps.ProductId == selectedProduct.ProductId)
+                        .Select(ps => ps.ProductSupplierId)
+                        .ToList();
+
+                    // Retrieve related booking details
+                    var bookingDetails = db.BookingDetails
+                        .Where(bd => bd.ProductSupplierId != null && productSupplierIds.Contains(bd.ProductSupplierId.Value))
+                        .ToList();
+
+                    // Delete related booking details
+                    db.BookingDetails.RemoveRange(bookingDetails);
+
+                    // Retrieve related entities in PackagesProductsSuppliers
+                    var packagesProductsSuppliers = db.PackagesProductsSuppliers
+                        .Where(pps => productSupplierIds.Contains(pps.ProductSupplierId))
+                        .ToList();
+
+                    // Delete related entities in PackagesProductsSuppliers
+                    db.PackagesProductsSuppliers.RemoveRange(packagesProductsSuppliers);
+
+                    // Delete related entities in ProductsSuppliers
+                    db.ProductsSuppliers.RemoveRange(db.ProductsSuppliers.Where(ps => ps.ProductId == selectedProduct.ProductId));
+
+                    // Delete the selected product
                     db.Products.Remove(selectedProduct);
+
                     db.SaveChanges();
                     selectedProduct = null;
                     loadList();

@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TravelExpertsGUI
-build_property.ProjectDir = C:\Users\amyro\OneDrive\Desktop\Proj2Try3\TravelExpertsMaintenance\TravelExpertsGUI\
+build_property.ProjectDir = C:\Users\user\Documents\GitHub\OOSDProject2\TravelExpertsGUI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

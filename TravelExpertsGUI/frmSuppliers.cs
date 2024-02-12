@@ -128,14 +128,36 @@ namespace TravelExpertsMaintenance
             }
         }
 
-        private void DeleteEntities<T>(DbSet<T> dbSet, Func<T, bool> predicate) where T : class
-        {
-            var entities = dbSet.Where(predicate);
-            foreach (var entity in entities)
-            {
-                dbSet.Remove(entity);
-            }
-        }
+        //private void DeleteEntities<T>(DbSet<T> dbSet, Func<T, bool> predicate) where T : class
+        //{
+        //    var entities = dbSet.Where(predicate);
+        //    foreach (var entity in entities)
+        //    {
+        //        dbSet.Remove(entity);
+        //    }
+        //}
+
+        //private void DeleteSupplier()
+        //{
+        //    DialogResult result = MessageBox.Show(
+        //                  $"Are you sure you want to delete Supplier {selectedSupplier.SupplierId}?",
+        //                  "Confirm Delete", MessageBoxButtons.YesNo,
+        //                  MessageBoxIcon.Question);
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        using (TravelExpertsContext db = new TravelExpertsContext())
+        //        {
+        //            // remove supplierId from ProductsSuppliers:
+        //            DeleteEntities(db.ProductsSuppliers, ps => ps.SupplierId == selectedSupplier.SupplierId);
+
+        //            db.Suppliers.Remove(selectedSupplier);
+        //            db.SaveChanges();
+        //            //selectedSupplier = null;
+        //            loadList();
+        //        }
+        //    }
+        //}
+
 
         private void DeleteSupplier()
         {
@@ -147,8 +169,8 @@ namespace TravelExpertsMaintenance
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
-                    // remove supplierId from ProductsSuppliers:
-                    DeleteEntities(db.ProductsSuppliers, ps => ps.SupplierId == selectedSupplier.SupplierId);
+                    // remove SupplierId from ProductSupplier
+                    //var productsSuppliers = db.ProductsSuppliers.Where(ps => ps.ProductSupplierId == selectedSupplier.SupplierId);
 
                     db.Suppliers.Remove(selectedSupplier);
                     db.SaveChanges();
@@ -157,28 +179,6 @@ namespace TravelExpertsMaintenance
                 }
             }
         }
-
-
-        //private void DeleteSupplier()
-        //{
-        //    DialogResult result = MessageBox.Show(
-        //                  $"Are you sure you want to delete ProdustSupplier {selectedSupplier.SupplierId}?",
-        //                  "Confirm Delete", MessageBoxButtons.YesNo,
-        //                  MessageBoxIcon.Question);
-        //    if (result == DialogResult.Yes)
-        //    {
-        //        using (TravelExpertsContext db = new TravelExpertsContext())
-        //        {
-        //            // remove SupplierId from ProductSupplier
-        //            var productsSuppliers = db.ProductsSuppliers.Where(ps => ps.ProductSupplierId == selectedSupplier.SupplierId);
-
-        //            db.Suppliers.Remove(selectedSupplier);
-        //            db.SaveChanges();
-        //            //selectedSupplier = null;
-        //            loadList();
-        //        }
-        //    }
-        //}
 
         private void btnAdd_Click(object sender, EventArgs e)
         {

@@ -61,6 +61,15 @@ public partial class TravelExpertsContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        foreach (var entityType in modelBuilder.Model.GetEntityTypes())
+        {
+            foreach (var foreignKey in entityType.GetForeignKeys())
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Cascade;
+            }
+        }
+
         modelBuilder.Entity<Affiliation>(entity =>
         {
             entity.HasKey(e => e.AffilitationId)
@@ -184,6 +193,11 @@ public partial class TravelExpertsContext : DbContext
             entity.HasKey(e => e.ProductId)
                 .HasName("aaaaaProducts_PK")
                 .IsClustered(false);
+
+            //// Configure the relationship with ProductSuppliers
+            //entity.HasMany(p => p.ProductsSuppliers)
+            //    .WithOne(ps => ps.Product)
+            //    .OnDelete(DeleteBehavior.Cascade);
         });
 
         modelBuilder.Entity<ProductsSupplier>(entity =>
@@ -243,6 +257,33 @@ public partial class TravelExpertsContext : DbContext
 
         OnModelCreatingPartial(modelBuilder);
     }
+    //protected override void OnModelCreating(ModelBuilder modelBuilder)
+    //{
+    //    // Configure cascade delete for Products and Product_Suppliers relationship
+    //    modelBuilder.Entity<Product>()
+    //        .HasMany(p => p.ProductSuppliers)
+    //        .WithOne(ps => ps.Product)
+    //        .OnDelete(DeleteBehavior.Cascade);
+
+    //    // Configure cascade delete for Product_Suppliers and Suppliers relationship
+    //    modelBuilder.Entity<ProductSupplier>()
+    //        .HasOne(ps => ps.Supplier)
+    //        .WithMany()
+    //        .OnDelete(DeleteBehavior.Cascade);
+
+    //    // Configure cascade delete for Packages and Products relationship
+    //    modelBuilder.Entity<Package>()
+    //        .HasMany(p => p.Products)
+    //        .WithOne()
+    //        .OnDelete(DeleteBehavior.Cascade);
+
+    //    // Configure cascade delete for Products and Packages relationship
+    //    modelBuilder.Entity<Product>()
+    //        .HasOne(p => p.Package)
+    //        .WithMany()
+    //        .OnDelete(DeleteBehavior.Cascade);
+    //}
+
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }

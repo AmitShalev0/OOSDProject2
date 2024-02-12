@@ -130,15 +130,6 @@ namespace TravelExpertsMaintenance
         //    }
         //}
 
-        private void DeleteEntities<T>(DbSet<T> dbSet, Func<T, bool> predicate) where T : class
-        {
-            var entities = dbSet.Where(predicate);
-            foreach (var entity in entities)
-            {
-                dbSet.Remove(entity);
-            }
-        }
-
         private void DeleteProduct()
         {
             DialogResult result = MessageBox.Show(
@@ -149,10 +140,59 @@ namespace TravelExpertsMaintenance
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
-                    DeleteEntities(db.ProductsSuppliers, ps => ps.ProductId == selectedProduct.ProductId);
+                    // remove from ProductSuppliers
+                    var productSuppliers = db.ProductsSuppliers.Where(ps => ps.ProductId == selectedProduct.ProductId);
+                    db.ProductsSuppliers.RemoveRange(productSuppliers);
+
+                    db.Products.Remove(selectedProduct);
+                    db.SaveChanges();
+                    loadList();
                 }
             }
         }
+
+
+
+
+        //private void DeleteEntities<T>(DbSet<T> dbSet, Func<T, bool> predicate) where T : class
+        //{
+        //    var entities = dbSet.Where(predicate);
+        //    foreach (var entity in entities)
+        //    {
+        //        dbSet.Remove(entity);
+        //    }
+        //}
+
+        //private void DeleteProduct()
+        //{
+        //    DialogResult result = MessageBox.Show(
+        //       $"Are you sure you want to delete Product {selectedProduct.ProductId}, and all items with this product ID??",
+        //       "Confirm Delete", MessageBoxButtons.YesNo,
+        //       MessageBoxIcon.Question);
+        //    if (result == DialogResult.Yes)
+        //    {
+        //        using (TravelExpertsContext db = new TravelExpertsContext())
+        //        {
+        //            db.Products.Remove(selectedProduct);
+        //        }
+        //    }
+        //}
+
+
+
+
+        //        using (TravelExpertsContext db = new TravelExpertsContext())
+        //        {
+        //            DeleteEntities(db.ProductsSuppliers, ps => ps.ProductId == selectedProduct.ProductId);
+        //            DeleteEntities(db.BookingDetails, bd => bd.ProductSupplierId == selectedProduct.ProductId);
+
+
+        //            db.Products.Remove(selectedProduct);
+        //            db.SaveChanges();
+        //            loadList();
+        //        }
+        //    }
+        //}
 
         private void ModifyProduct()
         {
@@ -174,7 +214,7 @@ namespace TravelExpertsMaintenance
             }
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             frmAddModifyProducts frmAddModifyProducts = new();
             DialogResult result = frmAddModifyProducts.ShowDialog();

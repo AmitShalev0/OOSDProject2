@@ -28,17 +28,6 @@ namespace TravelExpertsMaintenance
             //loading the combo boxes
             using (TravelExpertsContext db = new TravelExpertsContext())
             {
-                //var query = from ps in db.ProductsSuppliers
-                //            join p in db.Products on ps.ProductId equals p.ProductId
-                //            join s in db.Suppliers on ps.SupplierId equals s.SupplierId
-                //            select new
-                //            {
-                //                ps.ProductSupplierId,
-                //                p.ProductId,
-                //                p.ProdName,
-                //                s.SupplierId,
-                //                s.SupName
-                //            };
                 cboProduct.DataSource = db.Products.ToList();
                 cboProduct.DisplayMember = "ProdName".ToString();
                 cboProduct.ValueMember = "ProductId";
@@ -62,12 +51,10 @@ namespace TravelExpertsMaintenance
                     txtProductSupplierID.ReadOnly = true;
                     DisplayProductSupplier();
                 }
-
-
-
             }
-
         }
+
+
 
         private void DisplayProductSupplier()
         {

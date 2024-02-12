@@ -148,6 +148,14 @@ namespace TravelExpertsMaintenance
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
+                    // Delete related records in PackagesProductsSuppliers table
+                    var relatedPPS = db.PackagesProductsSuppliers.Where(pps => pps.PackageId == selectedPackage.PackageId).ToList();
+                    db.PackagesProductsSuppliers.RemoveRange(relatedPPS);
+
+                    // Find and delete related bookings
+                    var relatedBookings = db.Bookings.Where(b => b.PackageId == selectedPackage.PackageId).ToList();
+                    db.Bookings.RemoveRange(relatedBookings);
+
                     db.Packages.Remove(selectedPackage);
                     db.SaveChanges();
                     loadList();

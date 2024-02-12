@@ -129,23 +129,6 @@ namespace TravelExpertsMaintenance
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
-                    //List<Product> products = db.Products.ToList();
-                    //List<ProductsSupplier> deletingProducts = new List<ProductsSupplier>();
-                    //foreach (Product product in products)
-                    //{
-                    //    ProductsSupplier attachedproducts = new ProductsSupplier();
-                    //    attachedproducts.ProductId = selectedProduct.ProductId;
-                    //    var entityToRemove = db.ProductsSuppliers.FirstOrDefault( ps => ps.ProductId == attachedproducts.ProductId);
-                    //    if (entityToRemove != null)
-                    //    {
-                    //        db.ProductsSuppliers.Remove(entityToRemove);
-                    //        db.SaveChanges();
-                    //    }
-                    //}
-
-
-                    //db.Products.Remove(selectedProduct);
-
                     
                     // Retrieve the IDs of related entities
                     var productSupplierIds = db.ProductsSuppliers

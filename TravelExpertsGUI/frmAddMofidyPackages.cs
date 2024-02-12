@@ -172,6 +172,7 @@ namespace TravelExpertsMaintenance
                     .FirstOrDefault();
 
                 //create the PPS object
+                PPS = new PackagesProductsSupplier();
                 PPS.ProductSupplierId = productSupplierId;
                 PPS.PackageId = package.PackageId;
 

@@ -146,6 +146,28 @@ namespace TravelExpertsMaintenance
             {
                 using (TravelExpertsContext db = new TravelExpertsContext())
                 {
+                    // Find and delete related records in ProductsSuppliers table
+                    var relatedProductSuppliers = db.ProductsSuppliers.Where(ps => ps.SupplierId == selectedSupplier.SupplierId).ToList();
+                    db.ProductsSuppliers.RemoveRange(relatedProductSuppliers);
+
+                    // Materialize the list of ProductSupplierIds
+                    var productSupplierIds = relatedProductSuppliers.Select(ps => ps.ProductSupplierId).ToList();
+
+                    // Find and delete related records in PackagesProductsSuppliers table
+                    var relatedPackagesProductsSuppliers = db.PackagesProductsSuppliers
+                        .Where(pps => productSupplierIds.Contains(pps.ProductSupplierId))
+                        .ToList();
+                    db.PackagesProductsSuppliers.RemoveRange(relatedPackagesProductsSuppliers);
+
+                    // Find and delete related records in BookingDetails table
+                    var relatedBookingDetails = db.BookingDetails.Where(bd => productSupplierIds.Contains(bd.ProductSupplierId.Value)) // Convert int? to int using .Value
+                        .ToList();
+                    db.BookingDetails.RemoveRange(relatedBookingDetails);
+
+                    // Find and delete related records in SupplierContacts table
+                    var relatedSupplierContacts = db.SupplierContacts.Where(sc => sc.SupplierId == selectedSupplier.SupplierId).ToList();
+                    db.SupplierContacts.RemoveRange(relatedSupplierContacts);
+
                     db.Suppliers.Remove(selectedSupplier);
                     db.SaveChanges();
                     selectedSupplier = null;

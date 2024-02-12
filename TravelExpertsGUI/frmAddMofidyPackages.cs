@@ -94,9 +94,9 @@ namespace TravelExpertsMaintenance
                 var query2 = from p in db.Products
                              join ps in db.ProductsSuppliers on p.ProductId equals ps.ProductId
                              join s in db.Suppliers on ps.SupplierId equals s.SupplierId
-                             join pps in db.PackagesProductsSuppliers on ps.ProductSupplierId equals pps.ProductSupplierId
-                             join pk in db.Packages on pps.PackageId equals pk.PackageId
-                             where pk.PackageId != packageIdToFilter
+                             join pps in db.PackagesProductsSuppliers on ps.ProductSupplierId equals pps.ProductSupplierId into ppsGroup
+                             from pps in ppsGroup.DefaultIfEmpty()  // Left join
+                             where pps == null || pps.PackageId != packageIdToFilter
                              select new
                              {
                                  p.ProductId,

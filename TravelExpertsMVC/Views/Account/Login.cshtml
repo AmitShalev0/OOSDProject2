@@ -1,0 +1,25 @@
+﻿@model TravelExpertsData.Customer
+@{
+    ViewData["Title"] = "Login";
+}
+<form asp-action="Login" method="post">
+    <h3>Login</h3>
+    <table class="table">
+        <tr>
+            <td>Username: </td>
+            <td><input type="text" asp-for="CustUserName" /></td>
+        </tr>
+        <tr>
+            <td>Password: </td>
+            <td><input type="text" asp-for="CustPassword" /></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Authenticate" class="btn btn-primary" />
+            </td>
+        </tr>
+        <tr>
+            <a asp-controller="Register" asp-action="Register">New Customer? Register Here!</a>
+        </tr>
+    </table>
+</form>

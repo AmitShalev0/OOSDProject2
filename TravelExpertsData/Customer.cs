@@ -13,12 +13,15 @@ public partial class Customer
     public int CustomerId { get; set; }
 
     [StringLength(25)]
+    [Required(ErrorMessage = "First name is required.")]
     public string CustFirstName { get; set; } = null!;
 
     [StringLength(25)]
+    [Required(ErrorMessage = "Last name is required.")]
     public string CustLastName { get; set; } = null!;
 
     [StringLength(75)]
+
     public string CustAddress { get; set; } = null!;
 
     [StringLength(50)]
@@ -28,21 +31,42 @@ public partial class Customer
     public string CustProv { get; set; } = null!;
 
     [StringLength(7)]
+    [RegularExpression("^[A-Za-z]\\d[A-Za-z]\\d[A-Za-z]\\d$", ErrorMessage = "Postal code needs be in this format: Q1Q1Q1")]
     public string CustPostal { get; set; } = null!;
 
     [StringLength(25)]
     public string? CustCountry { get; set; }
 
     [StringLength(20)]
+    [Required(ErrorMessage = "Phone is required.")]
+    [RegularExpression("^\\d{10}$", ErrorMessage = "Please enter a 10 digit phone number.")]
     public string? CustHomePhone { get; set; }
 
     [StringLength(20)]
+    [RegularExpression("^\\d{10}$", ErrorMessage = "Please enter a 10 digit phone number.")]
     public string CustBusPhone { get; set; } = null!;
 
     [StringLength(50)]
+    [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", ErrorMessage = "Please enter a valid email.")]
     public string CustEmail { get; set; } = null!;
 
     public int? AgentId { get; set; }
+
+    [StringLength(50)]
+    [Unicode(false)]
+    [Required(ErrorMessage = "Username is required.")]
+    public string CustUserName { get; set; }
+
+    [StringLength(50)]
+    [Unicode(false)]
+    [Required(ErrorMessage = "Password is required.")]
+    public string CustPassword { get; set; }
+
+    [StringLength(25)]
+    [Required(ErrorMessage = "Please confirm password.")]
+    [Compare("CustPassword")]
+    [NotMapped]
+    public string CustConfirmPassword { get; set; }
 
     [ForeignKey("AgentId")]
     [InverseProperty("Customers")]

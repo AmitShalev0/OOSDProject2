@@ -35,6 +35,7 @@ namespace TravelExpertsData
                         where pb == null || pb.CustomerId != id
                         select new PackagesDTO
                             {
+                                PackageId = p.PackageId,
                                 PkgName = p.PkgName,
                                 PkgStartDate = p.PkgStartDate,
                                 PkgEndDate = p.PkgEndDate,
@@ -62,6 +63,7 @@ namespace TravelExpertsData
                         where c.CustomerId == customerId
                         select new PackagesDTO
                         {
+                            PackageId = p.PackageId,
                             PkgName = p.PkgName,
                             PkgStartDate = p.PkgStartDate,
                             PkgEndDate = p.PkgEndDate,

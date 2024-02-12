@@ -27,8 +27,9 @@ namespace TravelExpertsMVC.Controllers
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
-            List<string> tripTypes = TripTypeManager.GetTripTypes(_db!);
-            ViewBag.TravelTypes = new SelectList(tripTypes);
+            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+            var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
+            ViewBag.TravelTypes = ttypes;
 
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
@@ -40,9 +41,11 @@ namespace TravelExpertsMVC.Controllers
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
-            List<string> tripTypes = TripTypeManager.GetTripTypes(_db!);
-            ViewBag.TravelTypes = new SelectList(tripTypes);
+            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+            var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
+            ViewBag.TravelTypes = ttypes;
             int? NoOfPassengers = Convert.ToInt32(form["TravellersCount"]);//get the number of passengers
+            string tripType = form["TravelTypes"].ToString();//get the trip type
 
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
@@ -51,9 +54,9 @@ namespace TravelExpertsMVC.Controllers
             {
                 if (NoOfPassengers.HasValue && NoOfPassengers > 0 && NoOfPassengers <= 10)//a valid number was selected
                 {
-                    foreach (int packageId in selectedPackages)//add the packages
+                    foreach (int PackageId in selectedPackages)//add the packages
                     {
-                        BookingManager.AddBooking(_db!, customerId, packageId, NoOfPassengers);
+                        BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                     }
                     return RedirectToAction("MyPackages");
                 }

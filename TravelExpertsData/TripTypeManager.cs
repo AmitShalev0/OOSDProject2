@@ -8,11 +8,10 @@ namespace TravelExpertsData
 {
     public static class TripTypeManager
     {
-        public static List<string> GetTripTypes(TravelExpertsContext db)
+        public static List<TripType> GetTripTypes(TravelExpertsContext db)
         {
-            List<string> typeNames;
-            typeNames = db.TripTypes.Select(t => t.Ttname).ToList();
-            return typeNames;
+            var types = db.TripTypes.ToList();
+            return types;
         }
     }
 }

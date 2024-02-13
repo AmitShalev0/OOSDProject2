@@ -18,6 +18,7 @@ namespace TravelExpertsMVC.Controllers
         public ActionResult MyPackages()//gets the packages of a certain customer
         {
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
 
             List<PackagesDTO> packages = PackagesManager.GetPackagesByCustomer(_db!, customerId);
             return View(packages);

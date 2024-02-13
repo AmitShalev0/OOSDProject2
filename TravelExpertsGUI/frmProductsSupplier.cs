@@ -20,24 +20,6 @@ namespace TravelExpertsMaintenance
             //loadTables();
             loadList();
         }
-        //private void loadTables()
-        //{
-        //    //hardcoded name of tables in the combobox
-        //    cboTables.Items.Clear();
-        //    cboTables.Items.Add("Packages"); //0
-        //    cboTables.Items.Add("Products"); //1
-        //    cboTables.Items.Add("Suppliers"); //2
-        //    cboTables.Items.Add("Products/Suppliers"); //3
-        //}
-
-        //private void cboTables_SelectedIndexChanged_1(object sender, EventArgs e)
-        //{
-        //    if (cboTables.SelectedIndex != -1) //if a table was selected
-        //    {
-        //        whichTable = cboTables.SelectedIndex;
-        //        loadList();
-        //    }
-        //}
 
         private void loadList()
         {
@@ -52,7 +34,7 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn modifyColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
+                HeaderText = "Modify",
                 Text = "Modify"
             };
             dgvData.Columns.Add(modifyColumn);
@@ -62,7 +44,7 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn deleteColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
+                HeaderText = "Delete",
                 Text = "Delete"
             };
             dgvData.Columns.Add(deleteColumn);
@@ -94,6 +76,7 @@ namespace TravelExpertsMaintenance
                 dgvData.Columns[3].HeaderText = "Supplier ID";
                 dgvData.Columns[4].HeaderText = "Supplier Name";
 
+
                 dgvData.AutoResizeColumns();
 
             }
@@ -102,16 +85,6 @@ namespace TravelExpertsMaintenance
         private void dgvData_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            //using (TravelExpertsContext db = new TravelExpertsContext())
-            //{
-            //    if (e.RowIndex > -1)  // make sure header row wasn't clicked
-            //    {
-            //        //find the productsupplierID for the relectes row and then find the productsupplier object
-            //        DataGridViewCell cell = dgvData.Rows[e.RowIndex].Cells[0];//get the first cell of the row
-            //        int PSCode = Convert.ToInt32(cell.Value);
-            //        selectedPS = db.ProductsSuppliers.Find(PSCode);//the selected item
-            //    }
-            //}
 
             // index values for Modify and Delete button columns
             const int MODIFY_INDEX = 5;

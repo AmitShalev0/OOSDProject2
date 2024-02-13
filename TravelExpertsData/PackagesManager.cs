@@ -34,15 +34,15 @@ namespace TravelExpertsData
                         from pb in packageBookings.DefaultIfEmpty()
                         where pb == null || pb.CustomerId != id
                         select new PackagesDTO
-                            {
-                                PackageId = p.PackageId,
-                                PkgName = p.PkgName,
-                                PkgStartDate = p.PkgStartDate,
-                                PkgEndDate = p.PkgEndDate,
-                                PkgDesc = p.PkgDesc,
-                                PkgBasePrice = p.PkgBasePrice,
-                                PkgAgencyCommission = p.PkgAgencyCommission,
-                            }).ToList();
+                        {
+                            PackageId = p.PackageId,
+                            PkgName = p.PkgName,
+                            PkgStartDate = p.PkgStartDate,
+                            PkgEndDate = p.PkgEndDate,
+                            PkgDesc = p.PkgDesc,
+                            PkgBasePrice = p.PkgBasePrice,
+                            PkgAgencyCommission = p.PkgAgencyCommission,
+                        }).Distinct().ToList();
             return packages;
         }
 
@@ -74,6 +74,35 @@ namespace TravelExpertsData
 
                         ).ToList();
             return packages;
+        }
+
+        public static decimal GetTotal(TravelExpertsContext db, int? custId)
+        {
+            decimal total = 0;
+            // Fetch packages from the database
+            var packages = (from p in db.Packages
+                            join b in db.Bookings on p.PackageId equals b.PackageId
+                            join c in db.Customers on b.CustomerId equals c.CustomerId
+                            where c.CustomerId == custId
+                            select new PackagesDTO
+                            {
+                                PackageId = p.PackageId,
+                                PkgName = p.PkgName,
+                                PkgStartDate = p.PkgStartDate,
+                                PkgEndDate = p.PkgEndDate,
+                                PkgDesc = p.PkgDesc,
+                                PkgBasePrice = p.PkgBasePrice,
+                                PkgAgencyCommission = p.PkgAgencyCommission
+                            }).ToList();
+
+            // Calculate the total PkgBasePrice
+            decimal totalBasePrice = packages.Sum(p => p.PkgBasePrice);
+            // Calculate the total PkgAgencyCommission, handle null values by providing a default value of 0
+            decimal totalCommissionPrice = packages.Sum(p => p.PkgAgencyCommission ?? 0);
+
+            total = totalBasePrice + totalCommissionPrice;
+
+            return total;
         }
     }
 }

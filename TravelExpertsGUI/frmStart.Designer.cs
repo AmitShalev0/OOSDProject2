@@ -32,11 +32,12 @@
             btnProducts = new Button();
             btnSuppliers = new Button();
             btnProductsSupplier = new Button();
+            pnlForms = new Panel();
             SuspendLayout();
             // 
             // btnPackages
             // 
-            btnPackages.Location = new Point(60, 48);
+            btnPackages.Location = new Point(12, 46);
             btnPackages.Name = "btnPackages";
             btnPackages.Size = new Size(159, 92);
             btnPackages.TabIndex = 0;
@@ -46,7 +47,7 @@
             // 
             // btnProducts
             // 
-            btnProducts.Location = new Point(60, 161);
+            btnProducts.Location = new Point(12, 158);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(159, 92);
             btnProducts.TabIndex = 1;
@@ -56,7 +57,7 @@
             // 
             // btnSuppliers
             // 
-            btnSuppliers.Location = new Point(60, 283);
+            btnSuppliers.Location = new Point(12, 279);
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(159, 92);
             btnSuppliers.TabIndex = 2;
@@ -66,7 +67,7 @@
             // 
             // btnProductsSupplier
             // 
-            btnProductsSupplier.Location = new Point(60, 398);
+            btnProductsSupplier.Location = new Point(12, 392);
             btnProductsSupplier.Name = "btnProductsSupplier";
             btnProductsSupplier.Size = new Size(159, 92);
             btnProductsSupplier.TabIndex = 3;
@@ -74,11 +75,19 @@
             btnProductsSupplier.UseVisualStyleBackColor = true;
             btnProductsSupplier.Click += btnProductsSupplier_Click;
             // 
+            // pnlForms
+            // 
+            pnlForms.Location = new Point(177, 12);
+            pnlForms.Name = "pnlForms";
+            pnlForms.Size = new Size(1179, 497);
+            pnlForms.TabIndex = 4;
+            // 
             // frmStart
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1037, 525);
+            ClientSize = new Size(1368, 525);
+            Controls.Add(pnlForms);
             Controls.Add(btnProductsSupplier);
             Controls.Add(btnSuppliers);
             Controls.Add(btnProducts);
@@ -94,5 +103,6 @@
         private Button btnProducts;
         private Button btnSuppliers;
         private Button btnProductsSupplier;
+        private Panel pnlForms;
     }
 }

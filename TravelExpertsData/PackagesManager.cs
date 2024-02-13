@@ -9,12 +9,13 @@ namespace TravelExpertsData
 {
     public static class PackagesManager
     {
-        public static List<PackagesDTO> GetPackages(TravelExpertsContext db)
+        public static List<PackagesDTO> GetPackages(TravelExpertsContext db) //get all packages
         {
             List<PackagesDTO> packages;
             packages = (from p in db.Packages
                         select new PackagesDTO
                         {
+                            PackageId = p.PackageId,
                             PkgName = p.PkgName,
                             PkgStartDate = p.PkgStartDate,
                             PkgEndDate = p.PkgEndDate,
@@ -104,5 +105,25 @@ namespace TravelExpertsData
 
             return total;
         }
+
+        public static List<ProductDTO> GetDetails (TravelExpertsContext db, int pkgId)//get the details for a particular package
+        {
+
+            List<ProductDTO> products  = (from p in db.Products
+                                       join ps in db.ProductsSuppliers on p.ProductId equals ps.ProductId
+                                       join pps in db.PackagesProductsSuppliers on ps.ProductSupplierId equals pps.ProductSupplierId
+                                       join s in db.Suppliers on ps.SupplierId equals s.SupplierId
+                                       where pps.PackageId == pkgId
+                                       select new ProductDTO
+                                       {
+                                            ProdName= p.ProdName,
+                                            SupName = s.SupName,
+
+                                       }
+                                       ).ToList();
+
+
+            return products;
+        } 
     }
 }

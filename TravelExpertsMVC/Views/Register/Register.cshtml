@@ -1,97 +1,145 @@
 ﻿@model TravelExpertsData.Customer
-
 @{
     ViewData["Title"] = "Register";
 }
+<head>
+    <environment>
+        <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+        <link href="~/css/loginregister.css" rel="stylesheet" />
+        <script src="~/js/LoginRegister.js"></script>
+    </environment>
+</head>
 
 <h1>Register</h1>
 
 <hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Register">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="CustomerId" class="control-label"></label>
-                <input asp-for="CustomerId" class="form-control" />
-                <span asp-validation-for="CustomerId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustUserName" class="control-label"></label>
-                <input asp-for="CustUserName" class="form-control" />
-                <span asp-validation-for="CustUserName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustPassword" class="control-label"></label>
-                <input asp-for="CustPassword" class="form-control" />
-                <span asp-validation-for="CustPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustConfirmPassword" class="control-label"></label>
-                <input asp-for="CustConfirmPassword" class="form-control" />
-                <span asp-validation-for="CustConfirmPassword" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustFirstName" class="control-label"></label>
-                <input asp-for="CustFirstName" class="form-control" />
-                <span asp-validation-for="CustFirstName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustLastName" class="control-label"></label>
-                <input asp-for="CustLastName" class="form-control" />
-                <span asp-validation-for="CustLastName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustAddress" class="control-label"></label>
-                <input asp-for="CustAddress" class="form-control" />
-                <span asp-validation-for="CustAddress" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustCity" class="control-label"></label>
-                <input asp-for="CustCity" class="form-control" />
-                <span asp-validation-for="CustCity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustProv" class="control-label"></label>
-                <input asp-for="CustProv" class="form-control" />
-                <span asp-validation-for="CustProv" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustPostal" class="control-label"></label>
-                <input asp-for="CustPostal" class="form-control" />
-                <span asp-validation-for="CustPostal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustCountry" class="control-label"></label>
-                <input asp-for="CustCountry" class="form-control" />
-                <span asp-validation-for="CustCountry" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustHomePhone" class="control-label"></label>
-                <input asp-for="CustHomePhone" class="form-control" />
-                <span asp-validation-for="CustHomePhone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustBusPhone" class="control-label"></label>
-                <input asp-for="CustBusPhone" class="form-control" />
-                <span asp-validation-for="CustBusPhone" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustEmail" class="control-label"></label>
-                <input asp-for="CustEmail" class="form-control" />
-                <span asp-validation-for="CustEmail" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AgentId" class="control-label"></label>
-                <input asp-for="AgentId" class="form-control" />
-                <span asp-validation-for="AgentId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+
+        <div class="field">
+            <form asp-action="Register">
+                <table class="table">
+                    <tr>
+                        <td>Username:</td>
+                        <td>
+                            <input type="text" asp-for="CustUserName" id="custUserName" placeholder=" " />
+                            <label for="custUserName" asp-for="CustUserName">Username</label>
+                            <span asp-validation-for="CustUserName" id="eyeConUser">Hide Username</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" asp-for="CustPassword" id="password" placeholder=" " />
+                            <label for="password" asp-for="CustPassword">Password</label>
+                            <span asp-validation-for="CustPassword" id="eyeCon"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" asp-for="CustConfirmPassword" id="passwordConfirm" placeholder=" " />
+                            <label for="passwordConfirm" asp-for="CustConfirmPassword">Confirm Password</label>
+                            <span asp-validation-for="CustConfirmPassword" id="eyeConConfirm">Hide Password</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label asp-for="CustFirstName" class="control-label">First Name</label>
+                            <input asp-for="CustFirstName" class="form-control" placeholder=" " />
+                            <span asp-validation-for="CustFirstName" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label asp-for="CustLastName" class="control-label">Last Name</label>
+                            <input asp-for="CustLastName" class="form-control" placeholder=" " />
+                            <span asp-validation-for="CustLastName" class="text-danger"></span>
+                        </td>
+                    </tr>
+                    <!-- Repeat similar structure for other form fields -->
+                </table>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+
+@* <div class="row">
+    <div class="field">
+        <div class="col-md-4">
+            <form asp-action="Register">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <input asp-for="CustUserName" class="form-control" placeholder=" " />
+                    <label asp-for="CustUserName" class="control-label">Username</label>
+                    <span asp-validation-for="CustUserName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="CustPassword" class="form-control id="password" placeholder=" " />
+                    <label asp-for="CustPassword" class="control-label">Password</label>
+                    <span asp-validation-for="CustPassword" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustConfirmPassword" class="control-label">Confirm Password</label>
+                    <input asp-for="CustConfirmPassword" class="form-control type="password" id="password" placeholder=" " />
+                    <span asp-validation-for="CustConfirmPassword" class="text-danger" id="eyeCon">&#128064</span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustFirstName" class="control-label">First Name</label>
+                    <input asp-for="CustFirstName" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustFirstName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustLastName" class="control-label">Last Name</label>
+                    <input asp-for="CustLastName" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustLastName" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustAddress" class="control-label">Address</label>
+                    <input asp-for="CustAddress" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustCity" class="control-label">City</label>
+                    <input asp-for="CustCity" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustCity" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustProv" class="control-label">Province</label>
+                    <input asp-for="CustProv" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustProv" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustPostal" class="control-label">Postal Code</label>
+                    <input asp-for="CustPostal" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustPostal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustCountry" class="control-label">Country</label>
+                    <input asp-for="CustCountry" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustCountry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustHomePhone" class="control-label"Home Phone></label>
+                    <input asp-for="CustHomePhone" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustHomePhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustBusPhone" class="control-label">Business Phone</label>
+                    <input asp-for="CustBusPhone" class="form-control" placeholder=" " />
+                    <span asp-validation-for="CustBusPhone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="CustEmail" class="control-label">Email</label>
+                    <input asp-for="CustEmail" class="form-control" placeholder=" "/>
+                    <span asp-validation-for="CustEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+ *@
+
 
 <div>
     <a asp-action="Index">Back to Home</a>

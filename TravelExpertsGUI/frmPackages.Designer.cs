@@ -73,6 +73,7 @@
             Controls.Add(btnAdd);
             Controls.Add(dgvData);
             Name = "frmPackages";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmPackages";
             Load += frmPackages_Load;
             ((System.ComponentModel.ISupportInitialize)dgvData).EndInit();

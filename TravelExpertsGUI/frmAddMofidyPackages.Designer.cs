@@ -260,6 +260,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmAddMofidyPackages";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddMofidyPackages";
             Load += frmAddMofidyPackages_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCurrentProducts).EndInit();

@@ -102,6 +102,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmAddModifyProducts";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddModifyProducts";
             Load += frmAddModifyProducts_Load;
             ResumeLayout(false);

@@ -93,6 +93,7 @@
             Controls.Add(btnProducts);
             Controls.Add(btnPackages);
             Name = "frmStart";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmStart";
             ResumeLayout(false);
         }

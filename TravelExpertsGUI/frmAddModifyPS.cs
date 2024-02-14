@@ -58,7 +58,7 @@ namespace TravelExpertsMaintenance
                 }
                 else
                 {
-                    Text = "Modify";
+                    Text = "📝";
                     txtProductSupplierID.ReadOnly = true;
                     DisplayProductSupplier();
                 }

@@ -19,9 +19,9 @@
             <tr>
                 <td>Username:</td>
                 <td>
-                    <input type="text" asp-for="CustUserName" id="custUserName" placeholder=" " />
-                    <label for="custUserName" asp-for="CustUserName">Username</label>
-                    <span asp-validation-for="CustUserName" id="eyeConUser">Hide Username</span>
+                    <input type="text" asp-for="CustUserName" placeholder=" " />
+                    <label asp-for="CustUserName">Username</label>
+                    <span asp-validation-for="CustUserName" class="text-danger"></span>
                 </td>
             </tr>
                 <td>Password:</td>
@@ -56,7 +56,71 @@
                     <span asp-validation-for="CustLastName" class="text-danger"></span>
                 </td>
             </tr>
-            <!-- Repeat similar structure for other form fields -->
+            <td>Address:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustAddress" class="form-control" placeholder=" " />
+                    <label asp-for="CustAddress" class="control-label">Address</label>
+                    <span asp-validation-for="CustAddress" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>City:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustCity" class="form-control" placeholder=" " />
+                    <label asp-for="CustCity" class="control-label">City</label>
+                    <span asp-validation-for="CustCity" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Province:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustProv" class="form-control" placeholder=" " />
+                    <label asp-for="CustProv" class="control-label">Province</label>
+                    <span asp-validation-for="CustProv" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Postal Code:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustPostal" class="form-control" placeholder=" " />
+                    <label asp-for="CustPostal" class="control-label">Postal Code</label>
+                    <span asp-validation-for="CustPostal" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Country:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustCountry" class="form-control" placeholder=" " />
+                    <label asp-for="CustCountry" class="control-label">Country</label>
+                    <span asp-validation-for="CustCountry" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Home Phone #:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustHomePhone" class="form-control" placeholder=" " />
+                    <label asp-for="CustHomePhone" class="control-label" Home Phone></label>
+                    <span asp-validation-for="CustHomePhone" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Business Phone #:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustBusPhone" class="form-control" placeholder=" " />
+                    <label asp-for="CustBusPhone" class="control-label">Business Phone</label>
+                    <span asp-validation-for="CustBusPhone" class="text-danger"></span>
+                </td>
+            </tr>
+            <td>Email:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustEmail" class="form-control" placeholder=" " />
+                    <label asp-for="CustEmail" class="control-label">Email</label>
+                    <span asp-validation-for="CustEmail" class="text-danger"></span>
+                </td>
+            </tr>
+
         </table>
         <div class="form-group">
             <input type="submit" value="Create" class="btn btn-primary" />
@@ -143,11 +207,12 @@
 </div>
  *@
 
-
 <div>
     <a asp-action="Index">Back to Home</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

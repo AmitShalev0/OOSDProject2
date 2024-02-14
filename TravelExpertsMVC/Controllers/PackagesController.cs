@@ -14,15 +14,15 @@ namespace TravelExpertsMVC.Controllers
         //added constructor
         public PackagesController(TravelExpertsContext db) { _db = db; } //when the Packagescontrolelr is created it will get the context
 
-        // GET: PackagesController
-        public ActionResult MyPackages()//gets the packages of a certain customer
-        {
-            int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
+        //// GET: PackagesController
+        //public ActionResult MyPackages()//gets the packages of a certain customer
+        //{
+        //    int? customerId = HttpContext.Session.GetInt32("CustomerId");
+        //    ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
 
-            List<PackagesDTO> packages = PackagesManager.GetPackagesByCustomer(_db!, customerId);
-            return View(packages);
-        }
+        //    List<PackagesDTO> packages = PackagesManager.GetPackagesByCustomer(_db!, customerId);
+        //    return View(packages);
+        //}
 
         [AllowAnonymous]
         public ActionResult AvailablePackages()//get all the available packages for a certain custoemr
@@ -71,7 +71,7 @@ namespace TravelExpertsMVC.Controllers
                         {
                             BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                         }
-                        return RedirectToAction("MyPackages");
+                        return RedirectToAction("MyPackages","Booking");
                     } else
                     {
                         ViewBag.ErrorMessage = "Please select the travel type";
@@ -104,7 +104,26 @@ namespace TravelExpertsMVC.Controllers
             return View(products);
         }
 
+        //// GET: PackagesController/Delete/5
+        //public ActionResult Delete(int id)
+        //{
+        //    return View();
+        //}
 
+        //// POST: PackagesController/Delete/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Delete(int id, IFormCollection collection)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
 
         //// GET: PackagesController/Edit/5
         //public ActionResult Edit(int id)
@@ -173,24 +192,5 @@ namespace TravelExpertsMVC.Controllers
 
 
 
-        //// GET: PackagesController/Delete/5
-        //public ActionResult Delete(int id)
-        //{
-        //    return View();
-        //}
 
-        //// POST: PackagesController/Delete/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Delete(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
    

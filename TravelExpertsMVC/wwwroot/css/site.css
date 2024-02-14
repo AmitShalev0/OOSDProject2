@@ -22,7 +22,24 @@ html {
 
 body {
   margin-bottom: 60px;
+
+      margin-bottom: 60px;
+    background-image: url('../images/richard.jpg.jpg');
+    background-position:top;
 }
+
+.jumbotron {
+    background-image: url('../images/richard.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    border-color: black;
+}
+
 .active {
     font-weight: bold;
 }
@@ -30,3 +47,12 @@ body {
     /* Optional: Add margin-left to create space between other navbar items and the timer */
     /*margin-left: 10px;
 }*/
+
+.navbar img {
+    height: 10%; /* This will make the image the same height as your navbar */
+    width: 30%; /* This will keep the image's aspect ratio */
+}
+
+#imageLogo {
+
+}

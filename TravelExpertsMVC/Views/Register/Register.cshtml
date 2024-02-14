@@ -13,53 +13,56 @@
 <h1>Register</h1>
 
 <hr />
-
-        <div class="field">
-            <form asp-action="Register">
-                <table class="table">
-                    <tr>
-                        <td>Username:</td>
-                        <td>
-                            <input type="text" asp-for="CustUserName" id="custUserName" placeholder=" " />
-                            <label for="custUserName" asp-for="CustUserName">Username</label>
-                            <span asp-validation-for="CustUserName" id="eyeConUser">Hide Username</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" asp-for="CustPassword" id="password" placeholder=" " />
-                            <label for="password" asp-for="CustPassword">Password</label>
-                            <span asp-validation-for="CustPassword" id="eyeCon"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="text" asp-for="CustConfirmPassword" id="passwordConfirm" placeholder=" " />
-                            <label for="passwordConfirm" asp-for="CustConfirmPassword">Confirm Password</label>
-                            <span asp-validation-for="CustConfirmPassword" id="eyeConConfirm">Hide Password</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label asp-for="CustFirstName" class="control-label">First Name</label>
-                            <input asp-for="CustFirstName" class="form-control" placeholder=" " />
-                            <span asp-validation-for="CustFirstName" class="text-danger"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label asp-for="CustLastName" class="control-label">Last Name</label>
-                            <input asp-for="CustLastName" class="form-control" placeholder=" " />
-                            <span asp-validation-for="CustLastName" class="text-danger"></span>
-                        </td>
-                    </tr>
-                    <!-- Repeat similar structure for other form fields -->
-                </table>
-                <div class="form-group">
-                    <input type="submit" value="Create" class="btn btn-primary" />
-                </div>
-            </form>
+<div class="field">
+    <form asp-action="Register">
+        <table class="table">
+            <tr>
+                <td>Username:</td>
+                <td>
+                    <input type="text" asp-for="CustUserName" id="custUserName" placeholder=" " />
+                    <label for="custUserName" asp-for="CustUserName">Username</label>
+                    <span asp-validation-for="CustUserName" id="eyeConUser">Hide Username</span>
+                </td>
+            </tr>
+                <td>Password:</td>
+            <tr>
+                <td>
+                    <input type="text" asp-for="CustPassword" id="password" placeholder=" " />
+                    <label for="password" asp-for="CustPassword">Password</label>
+                    <span asp-validation-for="CustPassword" id="eyeCon"></span>
+                </td>
+            </tr>
+                <td>Confirm Password:</td>
+            <tr>
+                <td>
+                    <input type="text" asp-for="CustConfirmPassword" id="custConfirmPassword" placeholder=" " />
+                    <label for="custConfirmPassword" asp-for="CustConfirmPassword">Confirm Password</label>
+                    <span asp-validation-for="CustConfirmPassword" id="eyeConConfirm">Hide Password</span>
+                </td>
+            </tr>
+                <td>First Name:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustFirstName" class="form-control" placeholder=" " />
+                    <label asp-for="CustFirstName" class="control-label">First Name</label>
+                    <span asp-validation-for="CustFirstName" class="text-danger"></span>
+                </td>
+            </tr>
+                <td>Last Name:</td>
+            <tr>
+                <td>
+                    <input asp-for="CustLastName" class="form-control" placeholder=" " />
+                    <label asp-for="CustLastName" class="control-label">Last Name</label>
+                    <span asp-validation-for="CustLastName" class="text-danger"></span>
+                </td>
+            </tr>
+            <!-- Repeat similar structure for other form fields -->
+        </table>
+        <div class="form-group">
+            <input type="submit" value="Create" class="btn btn-primary" />
         </div>
+    </form>
+</div>
 
 @* <div class="row">
     <div class="field">

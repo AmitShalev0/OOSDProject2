@@ -55,11 +55,11 @@ namespace TravelExpertsMVC.Controllers
                     try
                     {
                         BookingManager.UpdateBooking(_db!, id, newBooking);
-                        TempData["Message"] = $"Successfully updated edited booking {newBooking.BookingId}";
+                        TempData["Message"] = $"Successfully updated edited booking {id}";
                     }
                     catch (Exception)
                     {
-                        TempData["message"] = $"Problem with editing booking {newBooking.BookingId}";
+                        TempData["message"] = $"Problem with editing booking {id}";
                         TempData["IsError"] = true;
                     }
                 }

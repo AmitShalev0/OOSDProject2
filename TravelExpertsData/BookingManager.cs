@@ -45,5 +45,49 @@ namespace TravelExpertsData
 
             return bookings;
         }
+
+        //public static List<BookingDetailsDTO> GetDetails(TravelExpertsContext db, int bkngId)
+        //{
+
+        //    List<BookingDetailsDTO> bookingDetails;
+        //    bookingDetails = (from b in db.Bookings
+        //                      join bd in db.BookingDetails
+        //                      on b.BookingId equals bd.BookingId
+        //                      join r in db.Regions
+        //                      on bd.RegionId equals r.RegionId
+        //                      where bd.BookingId == bkngId
+        //                      select new BookingDetailsDTO
+        //                      {
+        //                          BookingDetailId = bd.BookingDetailId,
+        //                          ItineraryNo = bd.ItineraryNo,
+        //                          RegionName = r.RegionName,
+        //                          Description = bd.Description,
+        //                          Destination = bd.Destination
+        //                      }).ToList();
+
+        //    return bookingDetails;
+        //}
+
+        public static Booking GetBookingById (TravelExpertsContext db, int id)
+        {
+            Booking booking = db.Bookings.Find(id);
+            return booking;
+        }
+
+        public static void UpdateBooking(TravelExpertsContext db, int id, Booking newBooking)
+        {
+            Booking? booking = db.Bookings.Find(id);
+            if (booking != null)
+            {
+                //booking.BookingNo = newBooking.BookingNo;
+                //booking.BookingDate = newBooking.BookingDate;
+                //booking.BookingDetails = newBooking.BookingDetails;
+                booking.TravelerCount = newBooking.TravelerCount;
+                booking.TripTypeId = newBooking.TripTypeId;
+                //booking.PackageId = newBooking.PackageId;
+                //booking.CustomerId = newBooking.CustomerId;
+                db.SaveChanges();
+            }
+        }
     }
 }

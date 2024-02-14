@@ -24,49 +24,47 @@ namespace TravelExpertsMVC.Controllers
         // GET: BookingController/Details/5
         //public ActionResult Details(int id)
         //{
-        //    var products = BookingManager.GetDetails(_db!, id);
-        //    return View(products);
+        //    var details = BookingManager.GetDetails(_db!, id);
+        //    return View(details);
         //}
 
-        // GET: BookingController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: BookingController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         // GET: BookingController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            Booking booking;
+            booking = BookingManager.GetBookingById(_db!, id);
+            if (booking != null)
+                return View(booking);
+            else
+                return View();
         }
 
         // POST: BookingController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Booking newBooking)
         {
-            try
+            if (ModelState.IsValid)
             {
-                return RedirectToAction(nameof(Index));
+                if (id != 0)
+                {
+                    try
+                    {
+                        BookingManager.UpdateBooking(_db!, id, newBooking);
+                        TempData["Message"] = $"Successfully updated edited booking {newBooking.BookingId}";
+                    }
+                    catch (Exception)
+                    {
+                        TempData["message"] = $"Problem with editing movie booking {newBooking.BookingId}";
+                        TempData["IsError"] = true;
+                    }
+                }
+                return RedirectToAction("MyBookings");
             }
-            catch
+            else
             {
-                return View();
+                return View(newBooking);
             }
         }
 
@@ -92,3 +90,6 @@ namespace TravelExpertsMVC.Controllers
         }
     }
 }
+
+        
+

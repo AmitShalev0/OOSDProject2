@@ -71,7 +71,7 @@ namespace TravelExpertsMVC.Controllers
                         {
                             BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                         }
-                        return RedirectToAction("MyPackages","Booking");
+                        return RedirectToAction("MyBookings","Booking");
                     } else
                     {
                         ViewBag.ErrorMessage = "Please select the travel type";

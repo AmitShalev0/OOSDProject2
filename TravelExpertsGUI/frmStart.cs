@@ -24,9 +24,10 @@ namespace TravelExpertsMaintenance
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
-        {
-            frmProducts frmProducts = new frmProducts();
-            DialogResult result = frmProducts.ShowDialog();
+         {  
+           
+           frmProducts frmProducts = new frmProducts();
+           DialogResult result = frmProducts.ShowDialog();
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)

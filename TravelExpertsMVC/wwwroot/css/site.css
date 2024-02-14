@@ -18,5 +18,23 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('../images/richard.jpg.jpg');
+    background-position:top;
 }
+
+.jumbotron {
+    background-image:  url('../images/richard.jpg.jpg');
+    background-size: cover;
+    background-position:center;
+    padding:100px;
+    background-repeat: no-repeat;
+    color: white;
+    text-align:center;
+    font-weight:900;
+    border-color:black;
+    
+
+}
+
+

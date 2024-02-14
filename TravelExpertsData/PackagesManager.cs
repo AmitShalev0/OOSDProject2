@@ -71,6 +71,7 @@ namespace TravelExpertsData
                             PkgDesc = p.PkgDesc,
                             PkgBasePrice = p.PkgBasePrice,
                             PkgAgencyCommission = p.PkgAgencyCommission,
+                            TravelerCount = b.TravelerCount
                         }
 
                         ).ToList();
@@ -88,20 +89,21 @@ namespace TravelExpertsData
                             select new PackagesDTO
                             {
                                 PackageId = p.PackageId,
-                                PkgName = p.PkgName,
-                                PkgStartDate = p.PkgStartDate,
-                                PkgEndDate = p.PkgEndDate,
-                                PkgDesc = p.PkgDesc,
                                 PkgBasePrice = p.PkgBasePrice,
-                                PkgAgencyCommission = p.PkgAgencyCommission
+                                PkgAgencyCommission = p.PkgAgencyCommission,
+                                TravelerCount = b.TravelerCount
                             }).ToList();
+            foreach( var p in packages )
+            {
+                total += (p.PkgAgencyCommission + p.PkgBasePrice) * Convert.ToDecimal(p.TravelerCount) ?? 0;
+            }
 
-            // Calculate the total PkgBasePrice
-            decimal totalBasePrice = packages.Sum(p => p.PkgBasePrice);
-            // Calculate the total PkgAgencyCommission, handle null values by providing a default value of 0
-            decimal totalCommissionPrice = packages.Sum(p => p.PkgAgencyCommission ?? 0);
+            //// Calculate the total PkgBasePrice
+            //decimal totalBasePrice = packages.Sum(p => p.PkgBasePrice);
+            //// Calculate the total PkgAgencyCommission, handle null values by providing a default value of 0
+            //decimal totalCommissionPrice = packages.Sum(p => p.PkgAgencyCommission ?? 0);
 
-            total = (totalBasePrice + totalCommissionPrice);
+            //total = (totalBasePrice + totalCommissionPrice);
 
             return total;
         }
@@ -125,5 +127,25 @@ namespace TravelExpertsData
 
             return products;
         } 
+
+        public static Package? GetPackageById(TravelExpertsContext db,int id)
+        {
+            Package? package = db.Packages.Find(id);
+            return package;
+        }
+
+        //public static void UpdatePackage (TravelExpertsContext db, int id, Package NewPackage)
+        //{
+        //    Package? package = db.Packages.Find (id);
+        //    if (package != null)
+        //    {
+        //        package.PkgName = NewPackage.PkgName;
+        //        package.PkgStartDate = NewPackage.PkgStartDate;
+        //        package.PkgEndDate = NewPackage.PkgEndDate;
+        //        package.PkgDesc = NewPackage.PkgDesc;
+        //        package.PkgBasePrice = NewPackage.PkgBasePrice;
+        //        package.
+        //    }
+        //}
     }
 }

@@ -6,7 +6,7 @@ using TravelExpertsData;
 
 namespace TravelExpertsMVC.Controllers
 {
-    [Authorize]
+    
     public class PackagesController : Controller
     {
         //constructor for the controller for injecting the context db
@@ -24,7 +24,7 @@ namespace TravelExpertsMVC.Controllers
         //    return View(packages);
         //}
 
-        [AllowAnonymous]
+        
         public ActionResult AvailablePackages()//get all the available packages for a certain custoemr
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
@@ -71,7 +71,7 @@ namespace TravelExpertsMVC.Controllers
                         {
                             BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                         }
-                        return RedirectToAction("MyPackages","Booking");
+                        return RedirectToAction("MyBookings","Booking");
                     } else
                     {
                         ViewBag.ErrorMessage = "Please select the travel type";
@@ -97,7 +97,7 @@ namespace TravelExpertsMVC.Controllers
 
 
         // GET: PackagesController/Details/5
-        [AllowAnonymous]
+        
         public ActionResult Details(int id)
         {
             var products = PackagesManager.GetDetails(_db!, id);

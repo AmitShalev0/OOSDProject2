@@ -21,13 +21,15 @@ public partial class Customer
     public string CustLastName { get; set; } = null!;
 
     [StringLength(75)]
-
+    [Required(ErrorMessage = "Address is required.")]
     public string CustAddress { get; set; } = null!;
 
     [StringLength(50)]
+    [Required(ErrorMessage = "City is required.")]
     public string CustCity { get; set; } = null!;
 
     [StringLength(2)]
+    [Required(ErrorMessage = "Province is required.")]
     public string CustProv { get; set; } = null!;
 
     [StringLength(7)]
@@ -35,19 +37,21 @@ public partial class Customer
     public string CustPostal { get; set; } = null!;
 
     [StringLength(25)]
+    [Required(ErrorMessage = "Country is required.")]
     public string? CustCountry { get; set; }
 
     [StringLength(20)]
-    [Required(ErrorMessage = "Phone is required.")]
     [RegularExpression("^\\d{10}$", ErrorMessage = "Please enter a 10 digit phone number.")]
     public string? CustHomePhone { get; set; }
 
     [StringLength(20)]
+    [Required(ErrorMessage = "Business Phone is required.")]
     [RegularExpression("^\\d{10}$", ErrorMessage = "Please enter a 10 digit phone number.")]
     public string CustBusPhone { get; set; } = null!;
 
     [StringLength(50)]
     [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", ErrorMessage = "Please enter a valid email.")]
+    [Required(ErrorMessage = "Email is required.")]
     public string CustEmail { get; set; } = null!;
 
     public int? AgentId { get; set; }

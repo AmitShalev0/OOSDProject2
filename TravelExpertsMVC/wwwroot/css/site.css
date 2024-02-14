@@ -43,5 +43,17 @@ body {
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     background-color: goldenrod;
     font-weight: bold;
-    color:black;
+}
+/*.nav-item#timer {*/
+    /* Optional: Add margin-left to create space between other navbar items and the timer */
+    /*margin-left: 10px;
+}*/
+
+.navbar img {
+    height: 10%; /* This will make the image the same height as your navbar */
+    width: 30%; /* This will keep the image's aspect ratio */
+}
+
+#imageLogo {
+
 }

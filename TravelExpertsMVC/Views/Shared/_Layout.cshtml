@@ -9,11 +9,11 @@
 
 <head>
 
-    @* <environment>
-        <link rel="stylesheet" type="text/css" href="~/css/site.css" />
-        <script src="~/js/site.js"></script>
+    <environment>
         <script scr="~/js/nav.js"></script>
-    </environment> *@
+        <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+@*         <script src="~/js/site.js"></script> *@
+    </environment>
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TravelExpertsMVC.styles.css" asp-append-version="true" />
 </head>
-<body onload="navBar(), footer()">
+<body onload="navBar()">
     <header>
         <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -42,7 +42,7 @@
                         <li class="nav-item">
                             <a class="nav-link @(controller == "Packages" && action == "MyPackages" ? "active" : "")" text-dark" asp-area="" asp-controller="Packages" asp-action="MyPackages">My Packages</a>
                         </li>
-                        <li id="timer">
+                        <li class="nav-item" id="timer">
                             <span id="timeDisplay"></span>
                         </li>
                     </ul>

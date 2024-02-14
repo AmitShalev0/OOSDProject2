@@ -10,6 +10,7 @@ namespace TravelExpertsData
 {
     public class PackagesDTO
     {
+        [Display(Name = "Package ID")]
         public int PackageId { get; set; }
 
         [Display(Name = "Package Name")]

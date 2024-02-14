@@ -68,5 +68,10 @@ namespace TravelExpertsMaintenance
             //// Call the OpenFormInPanel method to open frmProducts within a panel
             //TravelExpertsGUI.PanelAction.OpenFormInPanel.openFormInPanel(this, packagesForm, pnlForms);
         }
+
+        private void frmStart_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

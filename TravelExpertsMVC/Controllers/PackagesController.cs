@@ -50,32 +50,45 @@ namespace TravelExpertsMVC.Controllers
         public ActionResult AvailablePackages(IFormCollection form,int[] selectedPackages)//picks the id from the form
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
-            ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
+            var Tnumbers = new SelectList(numbers).ToList();
+            ViewBag.TravellersCount = Tnumbers;//load the drop-down list
             List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
             var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
             ViewBag.TravelTypes = ttypes;
-            int? NoOfPassengers = Convert.ToInt32(form["TravellersCount"]);//get the number of passengers
+            var Tcount = (form["TravellersCount"]);//get the number of passengers
             string tripType = form["TravelTypes"].ToString();//get the trip type
-
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
 
             if (selectedPackages != null && selectedPackages.Length >0)//package was selected
             {
-                if (NoOfPassengers.HasValue && NoOfPassengers > 0 && NoOfPassengers <= 10)//a valid number was selected
+                if (Tcount !="")//a valid number was selected
                 {
-                    foreach (int PackageId in selectedPackages)//add the packages
+                    int NoOfPassengers = Convert.ToInt32(Tcount);
+                    if (tripType != "")
                     {
-                        BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                        foreach (int PackageId in selectedPackages)//add the packages
+                        {
+                            BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                        }
+                        return RedirectToAction("MyPackages");
+                    } else
+                    {
+                        ViewBag.ErrorMessage = "Please select the travel type";
+                        return View(packages);
                     }
-                    return RedirectToAction("MyPackages");
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Please select a valid number from the dropdown list.";
+                    ViewBag.ErrorMessage = "Please select the number of travellers";
                     return View(packages);
                 }
    
+            }
+            else
+            {
+                ViewBag.ErrorMessage = "Please select a package.";
+                return View(packages);
             }
             return View(packages);
         }

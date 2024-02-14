@@ -23,3 +23,6 @@ html {
 body {
   margin-bottom: 60px;
 }
+.active {
+    font-weight: bold;
+}

@@ -101,7 +101,7 @@ namespace TravelExpertsData
             // Calculate the total PkgAgencyCommission, handle null values by providing a default value of 0
             decimal totalCommissionPrice = packages.Sum(p => p.PkgAgencyCommission ?? 0);
 
-            total = totalBasePrice + totalCommissionPrice;
+            total = (totalBasePrice + totalCommissionPrice);
 
             return total;
         }

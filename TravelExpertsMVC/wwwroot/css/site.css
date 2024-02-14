@@ -21,9 +21,7 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-
-      margin-bottom: 60px;
+    margin-bottom: 60px;
     background-image: url('../images/richard.jpg.jpg');
     background-position:top;
 }
@@ -40,10 +38,10 @@ body {
     border-color: black;
 }
 
-.active {
+
+#navbar {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    background-color: goldenrod;
     font-weight: bold;
+    color:black;
 }
-/*.nav-item#timer {*/
-    /* Optional: Add margin-left to create space between other navbar items and the timer */
-    /*margin-left: 10px;
-}*/

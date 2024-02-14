@@ -1,0 +1,88 @@
+﻿@model IEnumerable<TravelExpertsData.PackagesDTO>
+
+@{
+    ViewData["Title"] = "My Packages";
+}
+
+<h1>My Packages</h1>
+
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<form class="mt-3 mb-3">
+    <tr>
+        <a asp-action="AvailablePackages" asp-controller="Packages">Add Packages</a>
+    </tr>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PackageId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgStartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgEndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgDesc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgBasePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PkgAgencyCommission)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TravelerCount)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackageId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgStartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgEndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PkgDesc)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.PkgBasePrice)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.PkgAgencyCommission)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.TravelerCount)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PackageId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PackageId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PackageId })
+            </td>
+        </tr>
+}
+        <tr>
+            <td colspan="6">Total:</td>
+            <td>@ViewBag.Total.ToString("C")</td>
+            <td><input type="submit" class="btn btn-primary" value="Pay" /></td>
+        </tr>
+        
+    </tbody>
+</table>

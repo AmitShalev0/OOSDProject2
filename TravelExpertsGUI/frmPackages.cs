@@ -103,6 +103,9 @@ namespace TravelExpertsMaintenance
                 //dgvData.Columns[7].HeaderText = "Product Name";
                 //dgvData.Columns[8].HeaderText = "Supplier Name";
 
+                dgvData.Columns[5].DefaultCellStyle.Format = "c";//format clumn 5
+                dgvData.Columns[6].DefaultCellStyle.Format = "c";//format clumn 5
+
                 dgvData.AutoResizeColumns();
             }
         }

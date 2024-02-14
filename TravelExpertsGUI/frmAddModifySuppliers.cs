@@ -31,6 +31,7 @@ namespace TravelExpertsMaintenance
             else
             {
                 Text = "Modify";
+                txtSupplierID.Enabled = false;
                 DisplayProduct();
             }
         }

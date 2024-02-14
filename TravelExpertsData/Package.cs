@@ -24,9 +24,11 @@ public partial class Package
     public string? PkgDesc { get; set; }
 
     [Column(TypeName = "money")]
+    [DisplayFormat(DataFormatString = "{0:C}")]
     public decimal PkgBasePrice { get; set; }
 
     [Column(TypeName = "money")]
+    [DisplayFormat(DataFormatString = "{0:C}")]
     public decimal? PkgAgencyCommission { get; set; }
 
     [InverseProperty("Package")]

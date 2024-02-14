@@ -59,7 +59,7 @@ namespace TravelExpertsMVC.Controllers
                     }
                     catch (Exception)
                     {
-                        TempData["message"] = $"Problem with editing movie booking {newBooking.BookingId}";
+                        TempData["message"] = $"Problem with editing booking {newBooking.BookingId}";
                         TempData["IsError"] = true;
                     }
                 }
@@ -99,14 +99,14 @@ namespace TravelExpertsMVC.Controllers
         {
             int oldId=0;
 
-            if (TempData["MovieName"] != null)
+            if (TempData["BookingID"] != null)
             {
                 oldId = Convert.ToInt32(TempData["BookingID"]);
             }
             try
             {
                 BookingManager.DeleteBooking(_db!, id);
-                TempData["Message"] = $"Successfully deleted movie {oldId.ToString()}";
+                TempData["Message"] = $"Successfully deleted booking {oldId.ToString()}";
 
                 return RedirectToAction("MyBookings");
             }

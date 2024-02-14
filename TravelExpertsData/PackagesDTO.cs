@@ -10,6 +10,7 @@ namespace TravelExpertsData
 {
     public class PackagesDTO
     {
+        [Display(Name = "Package ID")]
         public int PackageId { get; set; }
 
         [Display(Name = "Package Name")]
@@ -17,10 +18,12 @@ namespace TravelExpertsData
 
         [Display(Name = "Start Date")]
         [Column(TypeName = "datetime")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? PkgStartDate { get; set; }
 
         [Column(TypeName = "datetime")]
         [Display(Name = "End Date")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? PkgEndDate { get; set; }
 
         [StringLength(50)]
@@ -29,10 +32,15 @@ namespace TravelExpertsData
 
         [Column(TypeName = "money")]
         [Display(Name = "Base Price")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal PkgBasePrice { get; set; }
 
         [Column(TypeName = "money")]
         [Display(Name = "Agency Commission")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal? PkgAgencyCommission { get; set; }
+
+        [Display(Name = "Travellers Count")]
+        public double? TravelerCount { get; set; }
     }
 }

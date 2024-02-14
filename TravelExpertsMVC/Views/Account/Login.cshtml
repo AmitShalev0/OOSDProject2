@@ -2,24 +2,43 @@
 @{
     ViewData["Title"] = "Login";
 }
-<form asp-action="Login" method="post">
-    <h3>Login</h3>
-    <table class="table">
-        <tr>
-            <td>Username: </td>
-            <td><input type="text" asp-for="CustUserName" /></td>
-        </tr>
-        <tr>
-            <td>Password: </td>
-            <td><input type="text" asp-for="CustPassword" /></td>
-        </tr>
-        <tr>
-            <td colspan="2">
-                <input type="submit" value="Authenticate" class="btn btn-primary" />
-            </td>
-        </tr>
-        <tr>
-            <a asp-controller="Register" asp-action="Register">New Customer? Register Here!</a>
-        </tr>
-    </table>
-</form>
+<head>
+    <environment>
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link href="~/css/loginregister.css" rel="stylesheet" />
+    <script src="~/js/LoginRegister.js"></script>
+    </environment>
+</head>
+
+    <div class="field">
+        <form asp-action="Login" method="post">
+            <h3>Login</h3>
+            <table class="table">
+                <tr>
+                    <td>Username: </td>
+                    <td>
+                        <input type="text" asp-for="CustUserName" placeholder=" "/>
+                        <label>Username</label>
+                        <span asp-validation-for="CustUserName"></span>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td>
+                        <input type="password" asp-for="CustPassword" id="password" placeholder=" " />
+                        <label for="password">Password</label>
+                        <span asp-validation-for="CustPassword" class="buttontype" id="eyeCon">Show Password</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="Authenticate" class="btn btn-primary" />
+                    </td>
+                </tr>
+                <tr>
+                    <a asp-controller="Register" asp-action="Register">New Customer? Register Here!</a>
+                </tr>
+            </table>
+        </form>
+    </div>

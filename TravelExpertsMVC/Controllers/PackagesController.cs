@@ -18,11 +18,13 @@ namespace TravelExpertsMVC.Controllers
         public ActionResult MyPackages()//gets the packages of a certain customer
         {
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
 
             List<PackagesDTO> packages = PackagesManager.GetPackagesByCustomer(_db!, customerId);
             return View(packages);
         }
 
+        [AllowAnonymous]
         public ActionResult AvailablePackages()//get all the available packages for a certain custoemr
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
@@ -32,59 +34,119 @@ namespace TravelExpertsMVC.Controllers
             ViewBag.TravelTypes = ttypes;
 
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
-            return View(packages);
+            if (customerId == null)//if guest show all packages
+            {
+                List<PackagesDTO> Allpackages = PackagesManager.GetPackages(_db!);
+                return View(Allpackages);
+            }
+            else//if customer show all packages that they already haven't purchased
+            {
+                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
+                return View(packages);
+            }  
         }
 
         [HttpPost]
         public ActionResult AvailablePackages(IFormCollection form,int[] selectedPackages)//picks the id from the form
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
-            ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
+            var Tnumbers = new SelectList(numbers).ToList();
+            ViewBag.TravellersCount = Tnumbers;//load the drop-down list
             List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
             var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
             ViewBag.TravelTypes = ttypes;
-            int? NoOfPassengers = Convert.ToInt32(form["TravellersCount"]);//get the number of passengers
+            var Tcount = (form["TravellersCount"]);//get the number of passengers
             string tripType = form["TravelTypes"].ToString();//get the trip type
-
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
 
             if (selectedPackages != null && selectedPackages.Length >0)//package was selected
             {
-                if (NoOfPassengers.HasValue && NoOfPassengers > 0 && NoOfPassengers <= 10)//a valid number was selected
+                if (Tcount !="")//a valid number was selected
                 {
-                    foreach (int PackageId in selectedPackages)//add the packages
+                    int NoOfPassengers = Convert.ToInt32(Tcount);
+                    if (tripType != "")
                     {
-                        BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                        foreach (int PackageId in selectedPackages)//add the packages
+                        {
+                            BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                        }
+                        return RedirectToAction("MyPackages");
+                    } else
+                    {
+                        ViewBag.ErrorMessage = "Please select the travel type";
+                        return View(packages);
                     }
-                    return RedirectToAction("MyPackages");
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Please select a valid number from the dropdown list.";
+                    ViewBag.ErrorMessage = "Please select the number of travellers";
                     return View(packages);
                 }
    
             }
+            else
+            {
+                ViewBag.ErrorMessage = "Please select a package.";
+                return View(packages);
+            }
             return View(packages);
-        } 
+        }
 
 
 
 
         // GET: PackagesController/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            return View();
-        }
-
-        public ActionResult GetAvailablePackages()//packages that are not already in customer's account
-        {
-            return View();
+            var products = PackagesManager.GetDetails(_db!, id);
+            return View(products);
         }
 
 
+
+        //// GET: PackagesController/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    Package? package = null;
+        //    package = PackagesManager.GetPackageById(_db!, id);
+        //    if (package != null)
+        //        return View(package);
+        //    else
+        //        return View();
+
+        //}
+
+        //// POST: PackagesController/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(int id, Package newPackageData)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (id != 0)
+        //        {
+        //            try
+        //            {
+        //                PackagesManager.UpdatePackage(_db!, id, newPackageData);
+        //                TempData["Message"] = $"Successfully updated movie {newPackageData.PkgName}";
+        //            }
+        //            catch (Exception)
+        //            {
+        //                TempData["message"] = $"Problem with updating movie {newPackageData.PkgName}";
+        //                TempData["IsError"] = true;
+        //            }
+        //        }
+        //        return RedirectToAction("MyPackages");
+        //    }
+        //    else
+        //    {
+        //        return View(newPackageData);
+        //    }
+        //}
+    }
+}
 
 
 
@@ -109,26 +171,7 @@ namespace TravelExpertsMVC.Controllers
         //    }
         //}
 
-        //// GET: PackagesController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
 
-        //// POST: PackagesController/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
         //// GET: PackagesController/Delete/5
         //public ActionResult Delete(int id)
@@ -150,5 +193,4 @@ namespace TravelExpertsMVC.Controllers
         //        return View();
         //    }
         //}
-    }
-}
+   

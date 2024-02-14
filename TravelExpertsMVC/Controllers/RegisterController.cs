@@ -35,7 +35,7 @@ namespace TravelExpertsMVC.Controllers
                 {
                     CustomerManager.AddCustomer(_db!, newCustomer);
                     TempData["Message"] = $"Registration Successful.";
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Login", "Account");
                 }
                 else
                 {

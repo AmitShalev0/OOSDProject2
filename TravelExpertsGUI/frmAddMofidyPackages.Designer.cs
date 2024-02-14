@@ -49,6 +49,7 @@
             txtCommission = new TextBox();
             btnOk = new Button();
             btnCancel = new Button();
+            btnRemoveProduct = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCurrentProducts).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvProductsToAdd).BeginInit();
             SuspendLayout();
@@ -124,6 +125,7 @@
             dgvCurrentProducts.RowHeadersWidth = 51;
             dgvCurrentProducts.Size = new Size(498, 201);
             dgvCurrentProducts.TabIndex = 7;
+            dgvCurrentProducts.CellClick += dgvCurrentProducts_CellClick;
             // 
             // dgvProductsToAdd
             // 
@@ -231,6 +233,16 @@
             btnCancel.Text = "Cancel";
             btnCancel.UseVisualStyleBackColor = true;
             // 
+            // btnRemoveProduct
+            // 
+            btnRemoveProduct.Location = new Point(516, 466);
+            btnRemoveProduct.Name = "btnRemoveProduct";
+            btnRemoveProduct.Size = new Size(68, 29);
+            btnRemoveProduct.TabIndex = 21;
+            btnRemoveProduct.Text = ">";
+            btnRemoveProduct.UseVisualStyleBackColor = true;
+            btnRemoveProduct.Click += btnRemoveProduct_Click;
+            // 
             // frmAddMofidyPackages
             // 
             AcceptButton = btnOk;
@@ -238,6 +250,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
             ClientSize = new Size(1095, 556);
+            Controls.Add(btnRemoveProduct);
             Controls.Add(btnCancel);
             Controls.Add(btnOk);
             Controls.Add(txtCommission);
@@ -260,6 +273,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmAddMofidyPackages";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddMofidyPackages";
             Load += frmAddMofidyPackages_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCurrentProducts).EndInit();
@@ -291,5 +305,6 @@
         private TextBox txtCommission;
         private Button btnOk;
         private Button btnCancel;
+        private Button btnRemoveProduct;
     }
 }

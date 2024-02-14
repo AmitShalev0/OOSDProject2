@@ -1,6 +1,20 @@
-﻿<!DOCTYPE html>
+﻿@{
+    string controller =
+        ViewContext.RouteData.Values["controller"].ToString();
+    string action =
+        ViewContext.RouteData.Values["action"].ToString();
+}
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <environment>
+        <script scr="~/js/nav.js"></script>
+        <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+@*         <script src="~/js/site.js"></script> *@
+    </environment>
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TravelExpertsMVC</title>
@@ -8,11 +22,11 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/TravelExpertsMVC.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body onload="navBar()">
     <header>
-        <nav style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light display-7 bg-warning bg-opacity-75 border-bottom box-shadow mb-3">
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-               @* <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"></a> *@
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Travel Experts</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,13 +34,16 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link @(controller == "Home" && action == "Index" ? "active" : "")" text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Packages" asp-action="AvailablePackages">Packages</a>
+                            <a class="nav-link @(controller == "Packages" && action == "AvailablePackages" ? "active" : "")" text-dark" asp-area="" asp-controller="Packages" asp-action="AvailablePackages">Packages</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Packages" asp-action="MyPackages">My Packages</a>
+                            <a class="nav-link @(controller == "Packages" && action == "MyPackages" ? "active" : "")" text-dark" asp-area="" asp-controller="Packages" asp-action="MyPackages">My Packages</a>
+                        </li>
+                        <li class="nav-item" id="timer">
+                            <span id="timeDisplay"></span>
                         </li>
 
                     </ul>
@@ -50,7 +67,7 @@
 
     <footer class="border-top footer text-white-50">
         <div class="container">
-            &copy; 2024 - TravelExperts - <a asp-area="" asp-controller="Home" asp-action="ContactUs">Contact Us</a>
+            &copy; 2024 - TravelExpertsMVC - <a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

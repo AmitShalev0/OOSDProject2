@@ -101,6 +101,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "frmAddModifySuppliers";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "frmAddModifySuppliers";
             Load += frmAddModifySuppliers_Load;
             ResumeLayout(false);

@@ -76,14 +76,20 @@ namespace TravelExpertsMaintenance
                             where pk.PackageId == packageIdToFilter
                             select new
                             {
+                                p.ProductId,
                                 p.ProdName,
-                                s.SupName
+                                s.SupplierId,
+                                s.SupName,
+                                pps.PackagesProductsSuppliersId
                             };
 
                 dgvCurrentProducts.DataSource = query.ToList();
 
-                dgvCurrentProducts.Columns[0].HeaderText = "Product Name";
-                dgvCurrentProducts.Columns[1].HeaderText = "Supplier Name";
+                dgvCurrentProducts.Columns[0].HeaderText = "Product ID";
+                dgvCurrentProducts.Columns[1].HeaderText = "Product Name";
+                dgvCurrentProducts.Columns[2].HeaderText = "Supplier ID";
+                dgvCurrentProducts.Columns[3].HeaderText = "Supplier Name";
+                dgvCurrentProducts.Columns[4].HeaderText = "Packages/Products/Supplier ID";
 
                 dgvCurrentProducts.AutoResizeColumns();
 
@@ -150,6 +156,18 @@ namespace TravelExpertsMaintenance
             }
         }
 
+        private void btnRemoveProduct_Click(object sender, EventArgs e)
+        {
+            using (TravelExpertsContext db = new TravelExpertsContext())
+            {
+                //add a new item to the PackagesProductsSupplier table
+                db.PackagesProductsSuppliers.Remove(PPS);
+                db.SaveChanges();
+
+                DisplayProductsWithPackage();
+            }
+        }
+
         private void dgvProductsToAdd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             using (TravelExpertsContext db = new TravelExpertsContext())
@@ -180,5 +198,17 @@ namespace TravelExpertsMaintenance
 
         }
 
+        private void dgvCurrentProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            using (TravelExpertsContext db = new TravelExpertsContext())
+            {
+                DataGridViewCell cell = dgvCurrentProducts.Rows[e.RowIndex].Cells[4];//get  productID
+                int packagesProductsSuppliersId = Convert.ToInt32(cell.Value);
+
+                PPS = db.PackagesProductsSuppliers.Find(packagesProductsSuppliersId);//the selected product
+
+
+            }
+        }
     }
 }

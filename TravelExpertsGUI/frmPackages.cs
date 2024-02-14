@@ -38,8 +38,8 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn modifyColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
-                Text = "Modify"
+                HeaderText = "Modify",
+                Text = "📝"
             };
             dgvData.Columns.Add(modifyColumn);
 
@@ -48,8 +48,8 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn deleteColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
-                Text = "Delete"
+                HeaderText = "Delete",
+                Text = "🗑️"
             };
             dgvData.Columns.Add(deleteColumn);
         }
@@ -102,6 +102,9 @@ namespace TravelExpertsMaintenance
                 dgvData.Columns[6].HeaderText = "Commission";
                 //dgvData.Columns[7].HeaderText = "Product Name";
                 //dgvData.Columns[8].HeaderText = "Supplier Name";
+
+                dgvData.Columns[5].DefaultCellStyle.Format = "c";//format clumn 5
+                dgvData.Columns[6].DefaultCellStyle.Format = "c";//format clumn 5
 
                 dgvData.AutoResizeColumns();
             }

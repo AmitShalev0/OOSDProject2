@@ -141,3 +141,32 @@ body {
     text-shadow: 0 0 3px black, 0 0 5px black;
     /* Cool styling */
 }
+
+
+.buttontype {
+/* Make the button look like a button. */
+    background-color: #0B92E0;
+    /* Blue color. */
+    border: none;
+    /* No border. */
+    color: white;
+    /* White text. */
+    padding: 15px 32px;
+    /* Size of the button. */
+    text-align: center;
+    /* Center the text. */
+    text-decoration: none;
+    /* No underline. */
+    display: inline-block;
+    /* Make the button look like a button. */
+    font-size: 16px;
+    /* Size of the text. */
+    margin: 4px 2px;
+    /* Margin of the button. */
+    cursor: pointer;
+    /* Make the cursor look like a pointer. */
+    border-radius: 12px;
+    /* Make the button look like a button. */
+    transition-duration: 0.4s;
+    /* Time of transition. */
+}

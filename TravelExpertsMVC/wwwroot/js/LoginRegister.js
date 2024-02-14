@@ -31,14 +31,31 @@ function toggleUserVisibility(custUserName) {
 
     if (passwordInput.type === "password") {    // If the type = password:
         passwordInput.type = "text";            // make type = text
-        eyeConUser.innerHTML = "Hide Password &#128584";          // change the icon to monkey closing its eyes.
+        eyeConUser.innerHTML = "Hide Username &#128584";          // change the icon to monkey closing its eyes.
     }
     else {                                      // If the type != password (when type = text):
         passwordInput.type = "password";        // make type = password
-        eyeConUser.innerHTML = "Show Password &#128064";          // change the icon to eyes.
+        eyeConUser.innerHTML = "Show Username &#128064";          // change the icon to eyes.
     }
 }
 
 
 var eyeConUser = document.getElementById("eyeConUser"); // this completes the function.
 eyeConUser.addEventListener('click', toggleUserVisibility); // Listen to when the icon is clicked, then make the togglePassword function work.
+
+
+function toggleConfirmPasswordVisibility(custConfirmPassword) {
+    var passwordInput = document.getElementById("custConfirmPassword");
+
+    if (passwordInput.type === "password") {    // If the type = password:
+        passwordInput.type = "text";            // make type = text
+        eyeConConfirm.innerHTML = "Hide Password &#128584";          // change the icon to monkey closing its eyes.
+    }
+    else {                                      // If the type != password (when type = text):
+        passwordInput.type = "password";        // make type = password
+        eyeConConfirm.innerHTML = "Show Password &#128064";          // change the icon to eyes.
+    }
+}
+
+var eyeConConfirm = document.getElementById("eyeConConfirm"); // this completes the function.
+eyeConConfirm.addEventListener('click', toggleConfirmPasswordVisibility); // Listen to when the icon is clicked, then make the togglePassword function work.

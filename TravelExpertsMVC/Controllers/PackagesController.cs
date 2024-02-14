@@ -18,11 +18,13 @@ namespace TravelExpertsMVC.Controllers
         public ActionResult MyPackages()//gets the packages of a certain customer
         {
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
+            ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
 
             List<PackagesDTO> packages = PackagesManager.GetPackagesByCustomer(_db!, customerId);
             return View(packages);
         }
 
+        [AllowAnonymous]
         public ActionResult AvailablePackages()//get all the available packages for a certain custoemr
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
@@ -32,8 +34,16 @@ namespace TravelExpertsMVC.Controllers
             ViewBag.TravelTypes = ttypes;
 
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
-            return View(packages);
+            if (customerId == null)//if guest show all packages
+            {
+                List<PackagesDTO> Allpackages = PackagesManager.GetPackages(_db!);
+                return View(Allpackages);
+            }
+            else//if customer show all packages that they already haven't purchased
+            {
+                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
+                return View(packages);
+            }  
         }
 
         [HttpPost]
@@ -68,15 +78,17 @@ namespace TravelExpertsMVC.Controllers
    
             }
             return View(packages);
-        } 
+        }
 
 
 
 
         // GET: PackagesController/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id)
         {
-            return View();
+            var products = PackagesManager.GetDetails(_db!, id);
+            return View(products);
         }
 
         public ActionResult GetAvailablePackages()//packages that are not already in customer's account

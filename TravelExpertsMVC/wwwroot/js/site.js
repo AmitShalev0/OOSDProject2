@@ -58,3 +58,22 @@ function toggleConfirmPasswordVisibility(custConfirmPassword) {
 
 var eyeConConfirm = document.getElementById("eyeConConfirm"); // this completes the function.
 eyeConConfirm.addEventListener('click', toggleConfirmPasswordVisibility); // Listen to when the icon is clicked, then make the togglePassword function work.
+
+
+function navBar() {
+    startTime(); // Start the clock
+
+    function startTime() {
+        const today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        var d = today.getDate();
+        var mts = today.getMonth() + 1;
+        var y = today.getFullYear();
+        if (m < 10) { m = "0" + m }
+        if (s < 10) { s = "0" + s }
+        document.getElementById('timeDisplay').innerHTML = h + ":" + m + ":" + s + "<br>" + mts + "." + d + "." + y;
+        setTimeout(startTime, 1000);
+    }
+}

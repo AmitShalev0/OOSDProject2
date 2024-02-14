@@ -1,4 +1,4 @@
-using TravelExpertsData;
+﻿using TravelExpertsData;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace TravelExpertsMaintenance
@@ -35,7 +35,7 @@ namespace TravelExpertsMaintenance
             {
                 UseColumnTextForButtonValue = true,
                 HeaderText = "Modify",
-                Text = "Modify"
+                Text = "📝"
             };
             dgvData.Columns.Add(modifyColumn);
 
@@ -45,7 +45,7 @@ namespace TravelExpertsMaintenance
             {
                 UseColumnTextForButtonValue = true,
                 HeaderText = "Delete",
-                Text = "Delete"
+                Text = "🗑️"
             };
             dgvData.Columns.Add(deleteColumn);
         }

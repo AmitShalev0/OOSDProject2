@@ -109,7 +109,6 @@
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmStart";
-            Opacity = 0.02D;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "frmStart";
             TransparencyKey = Color.Black;

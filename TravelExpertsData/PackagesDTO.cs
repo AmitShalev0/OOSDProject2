@@ -10,6 +10,7 @@ namespace TravelExpertsData
 {
     public class PackagesDTO
     {
+        [Display(Name = "Package ID")]
         public int PackageId { get; set; }
 
         [Display(Name = "Package Name")]
@@ -29,10 +30,12 @@ namespace TravelExpertsData
 
         [Column(TypeName = "money")]
         [Display(Name = "Base Price")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal PkgBasePrice { get; set; }
 
         [Column(TypeName = "money")]
         [Display(Name = "Agency Commission")]
+        [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal? PkgAgencyCommission { get; set; }
     }
 }

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TravelExpertsData;
 using TravelExpertsData.Migrations;
 
 namespace TravelExpertsMVC.Controllers
 {
+    [Authorize]
     public class BookingController : Controller
     {
         //constructor for the controller for injecting the context db
@@ -12,6 +14,7 @@ namespace TravelExpertsMVC.Controllers
         //added constructor
         public BookingController(TravelExpertsContext db) { _db = db; }
 
+        [Authorize]
         public ActionResult MyBookings()//gets the packages of a certain customer
         {
             int? customerId = HttpContext.Session.GetInt32("CustomerId");

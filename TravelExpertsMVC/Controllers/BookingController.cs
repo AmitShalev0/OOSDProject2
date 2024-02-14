@@ -105,7 +105,7 @@ namespace TravelExpertsMVC.Controllers
                 BookingManager.DeleteBooking(_db!, id);
                 TempData["Message"] = $"Successfully deleted movie {oldId.ToString()}";
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("MyBookings");
             }
             catch
             {

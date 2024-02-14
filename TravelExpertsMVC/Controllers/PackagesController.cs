@@ -104,12 +104,49 @@ namespace TravelExpertsMVC.Controllers
             return View(products);
         }
 
-        public ActionResult GetAvailablePackages()//packages that are not already in customer's account
-        {
-            return View();
-        }
 
 
+        //// GET: PackagesController/Edit/5
+        //public ActionResult Edit(int id)
+        //{
+        //    Package? package = null;
+        //    package = PackagesManager.GetPackageById(_db!, id);
+        //    if (package != null)
+        //        return View(package);
+        //    else
+        //        return View();
+
+        //}
+
+        //// POST: PackagesController/Edit/5
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Edit(int id, Package newPackageData)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        if (id != 0)
+        //        {
+        //            try
+        //            {
+        //                PackagesManager.UpdatePackage(_db!, id, newPackageData);
+        //                TempData["Message"] = $"Successfully updated movie {newPackageData.PkgName}";
+        //            }
+        //            catch (Exception)
+        //            {
+        //                TempData["message"] = $"Problem with updating movie {newPackageData.PkgName}";
+        //                TempData["IsError"] = true;
+        //            }
+        //        }
+        //        return RedirectToAction("MyPackages");
+        //    }
+        //    else
+        //    {
+        //        return View(newPackageData);
+        //    }
+        //}
+    }
+}
 
 
 
@@ -134,26 +171,7 @@ namespace TravelExpertsMVC.Controllers
         //    }
         //}
 
-        //// GET: PackagesController/Edit/5
-        //public ActionResult Edit(int id)
-        //{
-        //    return View();
-        //}
 
-        //// POST: PackagesController/Edit/5
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult Edit(int id, IFormCollection collection)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
 
         //// GET: PackagesController/Delete/5
         //public ActionResult Delete(int id)
@@ -175,5 +193,4 @@ namespace TravelExpertsMVC.Controllers
         //        return View();
         //    }
         //}
-    }
-}
+   

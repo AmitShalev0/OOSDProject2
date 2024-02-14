@@ -18,10 +18,12 @@ namespace TravelExpertsData
 
         [Display(Name = "Start Date")]
         [Column(TypeName = "datetime")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? PkgStartDate { get; set; }
 
         [Column(TypeName = "datetime")]
         [Display(Name = "End Date")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? PkgEndDate { get; set; }
 
         [StringLength(50)]
@@ -37,5 +39,8 @@ namespace TravelExpertsData
         [Display(Name = "Agency Commission")]
         [DisplayFormat(DataFormatString = "{0:C}")]
         public decimal? PkgAgencyCommission { get; set; }
+
+        [Display(Name = "Travellers Count")]
+        public double? TravelerCount { get; set; }
     }
 }

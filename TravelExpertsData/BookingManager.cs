@@ -89,5 +89,15 @@ namespace TravelExpertsData
                 db.SaveChanges();
             }
         }
+
+        public static void DeleteBooking (TravelExpertsContext db, int id)
+        {
+            Booking? booking = db.Bookings.Find(id);
+            if (booking != null)
+            {
+                db.Bookings.Remove(booking);
+                db.SaveChanges();
+            }
+        }
     }
 }

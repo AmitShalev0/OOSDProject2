@@ -71,21 +71,47 @@ namespace TravelExpertsMVC.Controllers
         // GET: BookingController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            Booking booking = null;
+            //as for confirm to delete
+            try
+            {
+                booking = BookingManager.GetBookingById(_db!, id);
+                if (booking != null)
+                {
+                    TempData["BookingID"] = booking.BookingId;
+                }
+            }
+            catch (Exception)
+            {
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
+            }
+            return View(booking);
         }
 
         // POST: BookingController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(int id, Booking booking)
         {
+            int oldId=0;
+
+            if (TempData["MovieName"] != null)
+            {
+                oldId = Convert.ToInt32(TempData["BookingID"]);
+            }
             try
             {
+                BookingManager.DeleteBooking(_db!, id);
+                TempData["Message"] = $"Successfully deleted movie {oldId.ToString()}";
+
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
-                return View();
+                TempData["Message"] = $"Problem with deleting movie {oldId.ToString()}";
+                TempData["IsError"] = true;
+                return View(booking);
             }
         }
     }

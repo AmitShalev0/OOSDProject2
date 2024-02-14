@@ -39,8 +39,8 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn modifyColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
-                Text = "Modify"
+                HeaderText = "Modify",
+                Text = "📝"
             };
             dgvData.Columns.Add(modifyColumn);
 
@@ -49,8 +49,8 @@ namespace TravelExpertsMaintenance
             DataGridViewButtonColumn deleteColumn = new()
             {
                 UseColumnTextForButtonValue = true,
-                HeaderText = "",
-                Text = "Delete"
+                HeaderText = "Delete",
+                Text = "🗑️"
             };
             dgvData.Columns.Add(deleteColumn);
 

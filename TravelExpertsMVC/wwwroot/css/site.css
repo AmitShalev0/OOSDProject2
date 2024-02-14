@@ -26,3 +26,7 @@ body {
 .active {
     font-weight: bold;
 }
+/*.nav-item#timer {*/
+    /* Optional: Add margin-left to create space between other navbar items and the timer */
+    /*margin-left: 10px;
+}*/

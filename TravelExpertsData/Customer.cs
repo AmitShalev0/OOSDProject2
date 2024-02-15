@@ -50,7 +50,7 @@ public partial class Customer
     public string CustBusPhone { get; set; } = null!;
 
     [StringLength(50)]
-    [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", ErrorMessage = "Please enter a valid email.")]
+    [RegularExpression("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$", ErrorMessage = "Email needs to be in this format: example@website.com")]
     [Required(ErrorMessage = "Email is required.")]
     public string CustEmail { get; set; } = null!;
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TravelExpertsData;
 
 namespace TravelExpertsMaintenance
 {
@@ -30,17 +31,25 @@ namespace TravelExpertsMaintenance
             //TravelExpertsGUI.PanelAction.OpenFormInPanel.openFormInPanel(this, productsSupplierForm, pnlForms);
         }
 
-        private void btnProducts_Click(object sender, EventArgs e)
+        //private void btnProducts_Click(object sender, EventArgs e)
+        //{
+        //    frmProducts frmProducts = new frmProducts();
+        //    DialogResult result = frmProducts.ShowDialog();
+
+        //    //// Create an instance of frmProducts
+        //    //frmProducts productsForm = new frmProducts();
+        //    //productsForm.FormBorderStyle = FormBorderStyle.None;
+
+        //    //// Call the OpenFormInPanel method to open frmProducts within a panel
+        //    //TravelExpertsGUI.PanelAction.OpenFormInPanel.openFormInPanel(this, productsForm, pnlForms);
+        //}
+
+        public void DisplayProducts(List<Product> products)
         {
-            frmProducts frmProducts = new frmProducts();
-            DialogResult result = frmProducts.ShowDialog();
+            dgvStartfrm.DataSource = products;
 
-            //// Create an instance of frmProducts
-            //frmProducts productsForm = new frmProducts();
-            //productsForm.FormBorderStyle = FormBorderStyle.None;
-
-            //// Call the OpenFormInPanel method to open frmProducts within a panel
-            //TravelExpertsGUI.PanelAction.OpenFormInPanel.openFormInPanel(this, productsForm, pnlForms);
+            // Format the DGV as needed
+            // ...
         }
 
         private void btnSuppliers_Click(object sender, EventArgs e)

@@ -33,12 +33,13 @@
             btnProducts = new Button();
             btnSuppliers = new Button();
             btnProductsSupplier = new Button();
-            pnlForms = new Panel();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnPackages
             // 
-            btnPackages.Location = new Point(10, 34);
+            btnPackages.Location = new Point(504, 282);
             btnPackages.Margin = new Padding(3, 2, 3, 2);
             btnPackages.Name = "btnPackages";
             btnPackages.Size = new Size(95, 38);
@@ -49,7 +50,7 @@
             // 
             // btnProducts
             // 
-            btnProducts.Location = new Point(189, 34);
+            btnProducts.Location = new Point(28, 282);
             btnProducts.Margin = new Padding(3, 2, 3, 2);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(108, 38);
@@ -62,7 +63,7 @@
             // 
             btnSuppliers.BackColor = Color.Tan;
             btnSuppliers.FlatStyle = FlatStyle.Popup;
-            btnSuppliers.Location = new Point(366, 34);
+            btnSuppliers.Location = new Point(181, 282);
             btnSuppliers.Margin = new Padding(3, 2, 3, 2);
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(116, 38);
@@ -75,7 +76,7 @@
             // 
             btnProductsSupplier.BackColor = Color.Tan;
             btnProductsSupplier.FlatStyle = FlatStyle.Popup;
-            btnProductsSupplier.Location = new Point(532, 34);
+            btnProductsSupplier.Location = new Point(325, 282);
             btnProductsSupplier.Margin = new Padding(3, 2, 3, 2);
             btnProductsSupplier.Name = "btnProductsSupplier";
             btnProductsSupplier.Size = new Size(129, 38);
@@ -84,23 +85,35 @@
             btnProductsSupplier.UseVisualStyleBackColor = false;
             btnProductsSupplier.Click += btnProductsSupplier_Click;
             // 
-            // pnlForms
+            // label1
             // 
-            pnlForms.Location = new Point(37, 86);
-            pnlForms.Margin = new Padding(3, 2, 3, 2);
-            pnlForms.Name = "pnlForms";
-            pnlForms.Size = new Size(589, 285);
-            pnlForms.TabIndex = 4;
-            pnlForms.Visible = false;
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(40, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(609, 32);
+            label1.TabIndex = 4;
+            label1.Text = "Welcome to Travel Experts data management tool.";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(224, 213);
+            label2.Name = "label2";
+            label2.Size = new Size(254, 32);
+            label2.TabIndex = 5;
+            label2.Text = "Please select a table.";
             // 
             // frmStart
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(673, 394);
-            Controls.Add(pnlForms);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnProductsSupplier);
             Controls.Add(btnSuppliers);
             Controls.Add(btnProducts);
@@ -110,10 +123,11 @@
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmStart";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmStart";
+            Text = "Travel Experts";
             TransparencyKey = Color.Black;
             Load += frmStart_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -122,7 +136,8 @@
         private Button btnProducts;
         private Button btnSuppliers;
         private Button btnProductsSupplier;
-        private Panel pnlForms;
+        private Label label1;
+        private Label label2;
 
         public static Image matthew_brodeur_DH_u2aV3nGM_unsplash { get; private set; }
     }

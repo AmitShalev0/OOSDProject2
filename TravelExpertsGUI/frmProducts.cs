@@ -79,6 +79,13 @@ namespace TravelExpertsMaintenance
                 dgvData.Columns[0].HeaderText = "Product ID";
                 dgvData.Columns[1].HeaderText = "Product Name";
 
+                // format the column header
+                dgvData.EnableHeadersVisualStyles = false;
+                dgvData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+                dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.Goldenrod;
+                dgvData.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+
+                dgvData.AlternatingRowsDefaultCellStyle.BackColor = Color.PaleGoldenrod;
                 dgvData.AutoResizeColumns();
 
             }
@@ -121,7 +128,7 @@ namespace TravelExpertsMaintenance
         private void DeleteProduct()
         {
             DialogResult result = MessageBox.Show(
-               $"Are you sure you want to delete ProdustSupplier {selectedProduct.ProductId}?",
+               $"Are you sure you want to delete product {selectedProduct.ProdName}?",
                "Confirm Delete", MessageBoxButtons.YesNo,
                MessageBoxIcon.Question);
             

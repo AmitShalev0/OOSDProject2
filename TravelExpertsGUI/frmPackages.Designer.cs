@@ -40,13 +40,13 @@
             dgvData.Location = new Point(2, 71);
             dgvData.Name = "dgvData";
             dgvData.RowHeadersWidth = 51;
-            dgvData.Size = new Size(1082, 367);
+            dgvData.Size = new Size(1257, 367);
             dgvData.TabIndex = 0;
             dgvData.CellClick += dgvData_CellClick;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(821, 29);
+            btnAdd.Location = new Point(954, 26);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(94, 29);
             btnAdd.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(943, 29);
+            btnExit.Location = new Point(1076, 26);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(94, 29);
             btnExit.TabIndex = 2;
@@ -68,13 +68,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1084, 450);
+            ClientSize = new Size(1260, 450);
             Controls.Add(btnExit);
             Controls.Add(btnAdd);
             Controls.Add(dgvData);
             Name = "frmPackages";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmPackages";
+            Text = "Packages";
             Load += frmPackages_Load;
             ((System.ComponentModel.ISupportInitialize)dgvData).EndInit();
             ResumeLayout(false);

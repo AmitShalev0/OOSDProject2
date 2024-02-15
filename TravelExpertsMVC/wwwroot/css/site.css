@@ -57,3 +57,7 @@ body {
 #imageLogo {
 
 }
+
+.active {
+    font-weight: bold;
+}

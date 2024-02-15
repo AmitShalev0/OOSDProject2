@@ -76,7 +76,13 @@ namespace TravelExpertsMaintenance
                 dgvData.Columns[3].HeaderText = "Supplier ID";
                 dgvData.Columns[4].HeaderText = "Supplier Name";
 
+                // format the column header
+                dgvData.EnableHeadersVisualStyles = false;
+                dgvData.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 9, FontStyle.Bold);
+                dgvData.ColumnHeadersDefaultCellStyle.BackColor = Color.Goldenrod;
+                dgvData.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
 
+                dgvData.AlternatingRowsDefaultCellStyle.BackColor = Color.PaleGoldenrod;
                 dgvData.AutoResizeColumns();
 
             }

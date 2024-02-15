@@ -52,9 +52,9 @@
             label5.AutoSize = true;
             label5.Location = new Point(44, 144);
             label5.Name = "label5";
-            label5.Size = new Size(86, 20);
+            label5.Size = new Size(111, 20);
             label5.TabIndex = 4;
-            label5.Text = "Supplier ID:";
+            label5.Text = "Supplier Name:";
             // 
             // btnOK
             // 
@@ -103,11 +103,11 @@
             label3.AutoSize = true;
             label3.Location = new Point(44, 94);
             label3.Name = "label3";
-            label3.Size = new Size(82, 20);
+            label3.Size = new Size(107, 20);
             label3.TabIndex = 2;
-            label3.Text = "Product ID:";
+            label3.Text = "Product Name:";
             // 
-            // frmAddModify
+            // frmAddModifyPS
             // 
             AcceptButton = btnOK;
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -122,9 +122,9 @@
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label1);
-            Name = "frmAddModify";
+            Name = "frmAddModifyPS";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAddModify";
+            Text = "Add/Modify";
             Load += frmAddModify_Load_1;
             ResumeLayout(false);
             PerformLayout();

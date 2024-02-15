@@ -58,19 +58,19 @@
             // 
             txtSupplierName.Location = new Point(162, 84);
             txtSupplierName.Name = "txtSupplierName";
-            txtSupplierName.Size = new Size(125, 27);
+            txtSupplierName.Size = new Size(283, 27);
             txtSupplierName.TabIndex = 2;
             // 
             // txtSupplierID
             // 
             txtSupplierID.Location = new Point(162, 41);
             txtSupplierID.Name = "txtSupplierID";
-            txtSupplierID.Size = new Size(125, 27);
+            txtSupplierID.Size = new Size(87, 27);
             txtSupplierID.TabIndex = 3;
             // 
             // btnOk
             // 
-            btnOk.Location = new Point(47, 169);
+            btnOk.Location = new Point(155, 149);
             btnOk.Name = "btnOk";
             btnOk.Size = new Size(94, 29);
             btnOk.TabIndex = 4;
@@ -80,7 +80,7 @@
             // 
             // btnCancel
             // 
-            btnCancel.Location = new Point(193, 169);
+            btnCancel.Location = new Point(301, 149);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(94, 29);
             btnCancel.TabIndex = 5;
@@ -93,7 +93,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = btnCancel;
-            ClientSize = new Size(375, 256);
+            ClientSize = new Size(557, 212);
             Controls.Add(btnCancel);
             Controls.Add(btnOk);
             Controls.Add(txtSupplierID);
@@ -102,7 +102,7 @@
             Controls.Add(label1);
             Name = "frmAddModifySuppliers";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmAddModifySuppliers";
+            Text = "Add/Modify";
             Load += frmAddModifySuppliers_Load;
             ResumeLayout(false);
             PerformLayout();

@@ -35,11 +35,13 @@ namespace TravelExpertsMaintenance
             btnProducts = new Button();
             btnSuppliers = new Button();
             btnProductsSupplier = new Button();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // btnPackages
             // 
-            btnPackages.Location = new Point(520, 21);
+            btnPackages.Location = new Point(504, 282);
             btnPackages.Margin = new Padding(3, 2, 3, 2);
             btnPackages.Name = "btnPackages";
             btnPackages.Size = new Size(95, 38);
@@ -50,7 +52,7 @@ namespace TravelExpertsMaintenance
             // 
             // btnProducts
             // 
-            btnProducts.Location = new Point(12, 21);
+            btnProducts.Location = new Point(28, 282);
             btnProducts.Margin = new Padding(3, 2, 3, 2);
             btnProducts.Name = "btnProducts";
             btnProducts.Size = new Size(108, 38);
@@ -63,7 +65,7 @@ namespace TravelExpertsMaintenance
             // 
             btnSuppliers.BackColor = Color.Tan;
             btnSuppliers.FlatStyle = FlatStyle.Popup;
-            btnSuppliers.Location = new Point(166, 21);
+            btnSuppliers.Location = new Point(181, 282);
             btnSuppliers.Margin = new Padding(3, 2, 3, 2);
             btnSuppliers.Name = "btnSuppliers";
             btnSuppliers.Size = new Size(116, 38);
@@ -76,7 +78,7 @@ namespace TravelExpertsMaintenance
             // 
             btnProductsSupplier.BackColor = Color.Tan;
             btnProductsSupplier.FlatStyle = FlatStyle.Popup;
-            btnProductsSupplier.Location = new Point(338, 21);
+            btnProductsSupplier.Location = new Point(325, 282);
             btnProductsSupplier.Margin = new Padding(3, 2, 3, 2);
             btnProductsSupplier.Name = "btnProductsSupplier";
             btnProductsSupplier.Size = new Size(129, 38);
@@ -85,6 +87,26 @@ namespace TravelExpertsMaintenance
             btnProductsSupplier.UseVisualStyleBackColor = false;
             btnProductsSupplier.Click += btnProductsSupplier_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(40, 62);
+            label1.Name = "label1";
+            label1.Size = new Size(609, 32);
+            label1.TabIndex = 4;
+            label1.Text = "Welcome to Travel Experts data management tool.";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(181, 148);
+            label2.Name = "label2";
+            label2.Size = new Size(254, 32);
+            label2.TabIndex = 5;
+            label2.Text = "Please select a table.";
+            // 
             // frmStart
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
@@ -92,6 +114,8 @@ namespace TravelExpertsMaintenance
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(673, 394);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(btnProductsSupplier);
             Controls.Add(btnSuppliers);
             Controls.Add(btnProducts);
@@ -101,10 +125,11 @@ namespace TravelExpertsMaintenance
             Margin = new Padding(3, 2, 3, 2);
             Name = "frmStart";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmStart";
+            Text = "Travel Experts";
             TransparencyKey = Color.Black;
             Load += frmStart_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -113,10 +138,8 @@ namespace TravelExpertsMaintenance
         private Button btnProducts;
         private Button btnSuppliers;
         private Button btnProductsSupplier;
-
-        public static Image TravelExpertsAppLogo { get; private set; }
-
-        //public static Image matthew_brodeur_DH_u2aV3nGM_unsplash { get; private set; }
+        private Label label1;
+        private Label label2;
 
     }
 }

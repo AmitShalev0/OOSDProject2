@@ -74,7 +74,7 @@
             Controls.Add(dgvData);
             Name = "frmProductsSupplier";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Products/Supplier Table";
+            Text = "Products/Supplier";
             Load += frmMain_Load;
             ((System.ComponentModel.ISupportInitialize)dgvData).EndInit();
             ResumeLayout(false);

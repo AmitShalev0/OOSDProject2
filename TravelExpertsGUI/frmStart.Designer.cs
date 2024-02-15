@@ -1,4 +1,6 @@
-﻿namespace TravelExpertsMaintenance
+﻿using System.Runtime.CompilerServices;
+
+namespace TravelExpertsMaintenance
 {
     partial class frmStart
     {
@@ -99,7 +101,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(224, 213);
+            label2.Location = new Point(181, 148);
             label2.Name = "label2";
             label2.Size = new Size(254, 32);
             label2.TabIndex = 5;
@@ -139,6 +141,5 @@
         private Label label1;
         private Label label2;
 
-        public static Image matthew_brodeur_DH_u2aV3nGM_unsplash { get; private set; }
     }
 }

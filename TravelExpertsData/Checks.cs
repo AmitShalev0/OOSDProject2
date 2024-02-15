@@ -8,7 +8,7 @@ namespace TravelExpertsData
 {
     public static class Checks
     {
-            public static bool EmailCheck(TravelExpertsContext db, string username)
+            public static bool UserCheck(TravelExpertsContext db, string username)
             {
                 bool UsernameOk = true;//unique
                 string msg = "";

@@ -39,7 +39,9 @@
             </div> *@
             <div class="form-group">
                 <label asp-for="TripTypeId" class="control-label"></label>
-                <input asp-for="TripTypeId" class="form-control" />
+                <select name="TripTypeId" asp-items="@ViewBag.TripTypes" class="form-select">
+                    <option value=""></option>
+                </select>
                 <span asp-validation-for="TripTypeId" class="text-danger"></span>
             </div>
 @*             <div class="form-group">

@@ -60,7 +60,9 @@
                     </div>
                     <div class="col-md-6 form-group">
                         <label asp-for="CustProv" class="control-label">Province</label>
-                        <input asp-for="CustProv" class="form-control" placeholder=" " />
+                        <select name="CustProv" asp-items="@ViewBag.Provinces" class="form-select">
+                            <option value=""></option>
+                        </select>
                         <span asp-validation-for="CustProv" class="text-danger"></span>
                     </div>
                     <div class="col-md-6 form-group">

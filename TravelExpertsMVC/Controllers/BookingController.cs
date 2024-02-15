@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using TravelExpertsData;
 using TravelExpertsData.Migrations;
 
@@ -37,6 +38,18 @@ namespace TravelExpertsMVC.Controllers
         {
             Booking booking;
             booking = BookingManager.GetBookingById(_db!, id);
+
+            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+            var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+            {
+                Value = t.TripTypeId.ToString(),
+                Text = t.Ttname,
+                Selected = (t.TripTypeId == booking.TripTypeId) // Set Selected to true for the matching trip type
+            }).ToList();
+
+            ViewBag.TripTypes = tripTypeSelectList;
+
+            
             if (booking != null)
                 return View(booking);
             else

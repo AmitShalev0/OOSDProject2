@@ -22,12 +22,12 @@ html {
 
 body {
     margin-bottom: 60px;
-    background-image: url('../images/richard.jpg.jpg');
+    /*background-image: url('../images/richard.jpg');*/
     background-position:top;
 }
 
 .jumbotron {
-    background-image: url('../images/richard.jpg.jpg');
+    /*background-image: url('../images/richard.jpg');*/
     background-size: cover;
     background-position: center;
     padding: 100px;

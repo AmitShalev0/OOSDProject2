@@ -213,11 +213,21 @@ namespace TravelExpertsMaintenance
         {
             using (TravelExpertsContext db = new TravelExpertsContext())
             {
-                //add a new item to the PackagesProductsSupplier table
-                db.PackagesProductsSuppliers.Add(PPS);
-                db.SaveChanges();
+                // Check if the product already exists in the package
+                bool alreadyExists = ProductsSupplierManager.ProductExists(package.PackageId, product.ProductId);
 
-                DisplayProductsWithPackage();
+                if (!alreadyExists) // If product doesn't exist
+                {
+                    // Add a new item to the PackagesProductsSupplier table
+                    db.PackagesProductsSuppliers.Add(PPS);
+                    db.SaveChanges();
+
+                    DisplayProductsWithPackage();
+                }
+                else
+                {
+                    MessageBox.Show("This product is already in this package with a different supplier.");
+                }
             }
         }
 

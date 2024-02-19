@@ -103,9 +103,8 @@ namespace TravelExpertsMaintenance
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(191, 341);
             label2.Name = "label2";
-            label2.Size = new Size(254, 32);
+            label2.Size = new Size(0, 32);
             label2.TabIndex = 5;
-            label2.Text = "Please select a table.";
             // 
             // frmStart
             // 
@@ -120,6 +119,7 @@ namespace TravelExpertsMaintenance
             Controls.Add(btnSuppliers);
             Controls.Add(btnProducts);
             Controls.Add(btnPackages);
+            DoubleBuffered = true;
             Font = new Font("Times New Roman", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 2, 3, 2);

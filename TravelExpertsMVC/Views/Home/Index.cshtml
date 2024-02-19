@@ -9,7 +9,9 @@
 <body>
 
     <div class="jumbotron justify-content-center container rounded-3 p-5 ">
-        <h3 style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="display-5 mt-1"><img width="50" height="50px" src="~/images/travel-icon-213.png" />Welcome to a World of Adventure</h3><br />
+        <h3 style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="display-5 mt-1">
+            <img width="50" height="50" src="~/images/travel-icon-213.png" />Welcome to a World of Adventure</h3>
+            <br />
         <p class="display-7" style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif"> Wonderful packages made just for you </p>
         <button type="submit" class="btn btn- bg-white  bg-opacity-50  justify-content-center p-0 rounded-3 ">
             <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register Here</a>
@@ -38,29 +40,27 @@
     </div>
 </body>
 
+@* Enter Carousel: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp *@
 <body>
-    @* Enter Carousel: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp *@
-
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="position: fixed; bottom: 10%; width: 100%; text-align: center; left: 1%;">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner">
+
             <div class="carousel-item active">
                 <img src="~/images/cristina.jpg" style="width:300px; height:auto;" />
             </div>
-
-
-        </div>
             <div class="carousel-item">
-            <img src="~/images/gert-boers.jpg" style="width:300px; height:auto;  />
+                <img src="~/images/gert-boers.jpg" style="width:300px; height:auto;" />
+            </div>
 
-            </div>
             <div class="carousel-item">
-            <img src="~/images/richard.jpg" style="width:300px; height:auto;  />
+                <img src="~/images/richard.jpg" style="width:300px; height:auto;" />
             </div>
+
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

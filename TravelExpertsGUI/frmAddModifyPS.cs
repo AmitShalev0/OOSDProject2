@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelExpertsData;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace TravelExpertsMaintenance
 {
@@ -28,17 +30,6 @@ namespace TravelExpertsMaintenance
             //loading the combo boxes
             using (TravelExpertsContext db = new TravelExpertsContext())
             {
-                //var query = from ps in db.ProductsSuppliers
-                //            join p in db.Products on ps.ProductId equals p.ProductId
-                //            join s in db.Suppliers on ps.SupplierId equals s.SupplierId
-                //            select new
-                //            {
-                //                ps.ProductSupplierId,
-                //                p.ProductId,
-                //                p.ProdName,
-                //                s.SupplierId,
-                //                s.SupName
-                //            };
                 cboProduct.DataSource = db.Products.ToList();
                 cboProduct.DisplayMember = "ProdName".ToString();
                 cboProduct.ValueMember = "ProductId";
@@ -80,17 +71,27 @@ namespace TravelExpertsMaintenance
         private void btnOK_Click(object sender, EventArgs e)
         {
             getData();
-            DialogResult = DialogResult.OK;
+            if (ProductsSupplierManager.UniqueCombo(productsSupplier))//combo is unique
+                {
+                    DialogResult = DialogResult.OK;
+                }
+            else
+                {
+                    MessageBox.Show("This Product and Supplier combination already exists.");
+                    return;
+                }
+                
         }
 
         private void getData()
         {
+            
             if (productsSupplier != null)
             {
-
                 productsSupplier.ProductId = Convert.ToInt32(cboProduct.SelectedValue);
                 productsSupplier.SupplierId = Convert.ToInt32(cboSupplier.SelectedValue);
             }
+
         }
 
 

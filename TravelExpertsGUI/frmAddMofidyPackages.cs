@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TravelExpertsData;
+using TravelExpertsGUI;
 
 namespace TravelExpertsMaintenance
 {
@@ -28,7 +29,7 @@ namespace TravelExpertsMaintenance
 
         public PackagesProductsSupplier PPS = new PackagesProductsSupplier();
 
-
+        private bool canClose = true; // Flag to determine whether the form can be closed
 
         private void frmAddMofidyPackages_Load(object sender, EventArgs e)
         {
@@ -52,8 +53,8 @@ namespace TravelExpertsMaintenance
             txtPackageID.Text = package.PackageId.ToString();
             txtPackageName.Text = package.PkgName.ToString();
             txtDescription.Text = package.PkgDesc.ToString();
-            txtCommission.Text = package.PkgAgencyCommission.ToString();
-            txtBasePrice.Text = package.PkgBasePrice.ToString();
+            txtCommission.Text = txtCommission.Text = package.PkgAgencyCommission?.ToString("c");
+            txtBasePrice.Text = package.PkgBasePrice.ToString("c");
             dtpStartDate.Value = package.PkgStartDate.Value;
             dtpEndDate.Value = package.PkgEndDate.Value;
         }
@@ -126,7 +127,10 @@ namespace TravelExpertsMaintenance
         private void btnOk_Click(object sender, EventArgs e)
         {
             getData();
-            DialogResult = DialogResult.OK;
+            if (canClose)
+            {
+                DialogResult = DialogResult.OK;
+            }
         }
 
         private void getData()
@@ -135,10 +139,71 @@ namespace TravelExpertsMaintenance
             {
                 package.PkgName = txtPackageName.Text;
                 package.PkgDesc = txtDescription.Text;
-                package.PkgAgencyCommission = Convert.ToDecimal(txtCommission.Text);
-                package.PkgBasePrice = Convert.ToDecimal(txtBasePrice.Text);
+
+                string commissionText = txtCommission.Text.Replace("$", "");
+                decimal commission;
+                if (!decimal.TryParse(commissionText, out commission))
+                {
+                    MessageBox.Show("Please enter a valid commission amount.");
+                    txtCommission.Focus();
+                    canClose = false;
+                    return;
+                }
+
+                string basePriceText = txtBasePrice.Text.Replace("$", "");
+                decimal basePrice;
+                if (!decimal.TryParse(basePriceText, out basePrice))
+                {
+                    MessageBox.Show("Please enter a valid base price.");
+                    txtBasePrice.Focus();
+                    canClose = false;
+                    return;
+                }
+
+                if (commission < 0)
+                {
+                    MessageBox.Show("Commission must be equal or more than zero");
+                    txtCommission.Focus();
+                    canClose = false;
+                    return;
+                }
+
+                if (basePrice < 0)
+                {
+                    MessageBox.Show("Base Price must be equal or more than zero");
+                    txtBasePrice.Focus();
+                    canClose = false;
+                    return;
+                }
+
+                if (commission > basePrice)
+                {
+                    MessageBox.Show("Commission must be lower than Base Price.");
+                    canClose = false;
+                    return;
+                }
+
+                package.PkgAgencyCommission = commission;
+                package.PkgBasePrice = basePrice;
+
+                if (dtpStartDate.Value > dtpEndDate.Value)
+                {
+                    MessageBox.Show("Start date must be before end date.");
+                    canClose = false;
+                    return;
+                }
                 package.PkgStartDate = dtpStartDate.Value;
                 package.PkgEndDate = dtpEndDate.Value;
+                canClose = true;
+            }
+        }
+
+        private void frmAddModifyPackages(object sender, FormClosingEventArgs e)
+        {
+            if (!canClose)
+            {
+                e.Cancel = true; // Cancel the closing operation
+                canClose = true; // Reset the flag for next time
             }
         }
 
@@ -170,6 +235,12 @@ namespace TravelExpertsMaintenance
 
         private void dgvProductsToAdd_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if the header was clicked
+            if (e.RowIndex == -1)
+            {
+                // Header was clicked, do nothing or handle it as needed
+                return;
+            }
             using (TravelExpertsContext db = new TravelExpertsContext())
             {
                 DataGridViewCell cell = dgvProductsToAdd.Rows[e.RowIndex].Cells[0];//get  productID
@@ -200,6 +271,12 @@ namespace TravelExpertsMaintenance
 
         private void dgvCurrentProducts_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // Check if the header was clicked
+            if (e.RowIndex == -1)
+            {
+                // Header was clicked, do nothing or handle it as needed
+                return;
+            }
             using (TravelExpertsContext db = new TravelExpertsContext())
             {
                 DataGridViewCell cell = dgvCurrentProducts.Rows[e.RowIndex].Cells[4];//get  productID

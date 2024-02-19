@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TechSupportData
+namespace TravelExpertsGUI
 {
     /// <summary>
     /// a repository of validation methods

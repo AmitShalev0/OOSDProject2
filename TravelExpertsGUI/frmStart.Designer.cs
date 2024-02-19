@@ -91,7 +91,7 @@ namespace TravelExpertsMaintenance
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(40, 62);
+            label1.Location = new Point(12, 229);
             label1.Name = "label1";
             label1.Size = new Size(609, 32);
             label1.TabIndex = 4;
@@ -101,7 +101,7 @@ namespace TravelExpertsMaintenance
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Times New Roman", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(181, 148);
+            label2.Location = new Point(191, 341);
             label2.Name = "label2";
             label2.Size = new Size(254, 32);
             label2.TabIndex = 5;
@@ -113,7 +113,7 @@ namespace TravelExpertsMaintenance
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(673, 394);
+            ClientSize = new Size(664, 394);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(btnProductsSupplier);

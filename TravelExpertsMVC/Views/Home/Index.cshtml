@@ -1,33 +1,74 @@
-﻿@{
+﻿
+<script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+<link href="~/css/homepage.css" rel="stylesheet" />
+
+@{
     ViewData["Title"] = "Home Page";
 }
+<body>
 
-<div class="jumbotron justify-content-center container rounded-3 p-5 ">
-    <h3 style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="display-5 mt-1"><img width="50" height="50px" src="~/images/travel-icon-213.png" />Welcome to a World of Adventure</h3><br />
-    <p class ="display-7" style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif"> Wonderful packages made just for you </p>
-    <button type="submit" class="btn btn- bg-white  bg-opacity-50  justify-content-center p-0 rounded-3 ">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register Here</a>
+    <div class="jumbotron justify-content-center container rounded-3 p-5 ">
+        <h3 style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="display-5 mt-1">
+            <img width="50" height="50" src="~/images/travel-icon-213.png" />Welcome to a World of Adventure</h3>
+            <br />
+        <p class="display-7" style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif"> Wonderful packages made just for you </p>
+        <button type="submit" class="btn btn- bg-white  bg-opacity-50  justify-content-center p-0 rounded-3 ">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register Here</a>
         </button>
-</div>
+    </div>
 
-<div class="container mt-4 col-md-4 bg-white bg-opacity-75 float-start rounded-3 p-3">
-    Travel Experts is passionate about travel and are seeking new ways 
-    to help travellers around the world have an exceptional travel 
-    experience.<br/>
-    Our network of travel advisors is comprised of
-    seasoned entrepreneurs who are determined to make your travel
-    expectations exceeded!
-    Our advisors are spread accross 38 states which makes it
-    easy to find a prefect match for you
-   </div >
-<div class="container mt-4 bg-white bg-opacity-75 col-md-4 float-end rounded-3 p-3">
-    Your advisor will guide you through
-    the exciting planning phase of your next adventure, 
-    paying attention to every detail.They understand how valuable 
-    your time is and are eager to complete the planning phase in
-    a timely manner.<br/>
-    From the very early stages of planning, up until yor return,
-    your travel advisor can be reached at all times!
+    <div class="container mt-4 col-md-4 bg-white bg-opacity-75 float-start rounded-3 p-3">
+        Travel Experts is passionate about travel and are seeking new ways
+        to help travellers around the world have an exceptional travel
+        experience.<br />
+        Our network of travel advisors is comprised of
+        seasoned entrepreneurs who are determined to make your travel
+        expectations exceeded!
+        Our advisors are spread accross 38 states which makes it
+        easy to find a prefect match for you
+    </div>
+    <div class="container mt-4 bg-white bg-opacity-75 col-md-4 float-end rounded-3 p-3">
+        Your advisor will guide you through
+        the exciting planning phase of your next adventure,
+        paying attention to every detail.They understand how valuable
+        your time is and are eager to complete the planning phase in
+        a timely manner.<br />
+        From the very early stages of planning, up until yor return,
+        your travel advisor can be reached at all times!
 
-   </div>
+    </div>
+</body>
 
+@* Enter Carousel: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp *@
+<body>
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="position: fixed; bottom: 10%; width: 100%; text-align: center; left: 1%;">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="~/images/cristina.jpg" style="width:300px; height:auto;" />
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/gert-boers.jpg" style="width:300px; height:auto;" />
+            </div>
+
+            <div class="carousel-item">
+                <img src="~/images/richard.jpg" style="width:300px; height:auto;" />
+            </div>
+
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</body>

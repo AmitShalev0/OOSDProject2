@@ -93,7 +93,6 @@ namespace TravelExpertsMVC.Controllers
                 ViewBag.ErrorMessage = "Please select a package.";
                 return View(packages);
             }
-            return View(packages);
         }
 
 

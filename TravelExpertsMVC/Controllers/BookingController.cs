@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TravelExpertsData;
-using TravelExpertsData.Migrations;
 
 namespace TravelExpertsMVC.Controllers
 {
@@ -65,6 +64,25 @@ namespace TravelExpertsMVC.Controllers
             {
                 if (id != 0)
                 {
+                    bool TCountValid = BookingManager.IsWholeNumber(newBooking.TravelerCount);
+                    // Validate TravelerCount
+                    if (newBooking.TravelerCount < 0 || !TCountValid)
+                    {
+                        ModelState.AddModelError("TravelerCount", "Traveler count must be a positive whole number.");
+                        // Reload trip types to populate the dropdown again
+                        List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                        var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                        {
+                            Value = t.TripTypeId.ToString(),
+                            Text = t.Ttname,
+                            Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
+                        }).ToList();
+
+                        ViewBag.TripTypes = tripTypeSelectList;
+
+                        return View(newBooking);
+                    }
+
                     try
                     {
                         BookingManager.UpdateBooking(_db!, id, newBooking);
@@ -80,6 +98,17 @@ namespace TravelExpertsMVC.Controllers
             }
             else
             {
+                // If ModelState is not valid, reload trip types to populate the dropdown again
+                List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                {
+                    Value = t.TripTypeId.ToString(),
+                    Text = t.Ttname,
+                    Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
+                }).ToList();
+
+                ViewBag.TripTypes = tripTypeSelectList;
+
                 return View(newBooking);
             }
         }

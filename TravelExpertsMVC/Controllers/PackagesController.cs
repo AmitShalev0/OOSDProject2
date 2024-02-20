@@ -46,8 +46,9 @@ namespace TravelExpertsMVC.Controllers
             }  
         }
 
+        [Authorize]
         [HttpPost]
-        public ActionResult AvailablePackages(IFormCollection form,int[] selectedPackages)//picks the id from the form
+        public ActionResult AvailablePackages(IFormCollection form, int[] selectedPackages)//picks the id from the form
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             var Tnumbers = new SelectList(numbers).ToList();
@@ -60,9 +61,10 @@ namespace TravelExpertsMVC.Controllers
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
 
-            if (selectedPackages != null && selectedPackages.Length >0)//package was selected
+            if (selectedPackages != null && selectedPackages.Length > 0)//package was selected
             {
-                if (Tcount !="")//a valid number was selected
+                TempData["SelectedPackages"] = selectedPackages;
+                if (Tcount != "")//a valid number was selected
                 {
                     int NoOfPassengers = Convert.ToInt32(Tcount);
                     if (tripType != "")
@@ -71,8 +73,9 @@ namespace TravelExpertsMVC.Controllers
                         {
                             BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                         }
-                        return RedirectToAction("MyBookings","Booking");
-                    } else
+                        return RedirectToAction("MyBookings", "Booking");
+                    }
+                    else
                     {
                         ViewBag.ErrorMessage = "Please select the travel type";
                         return View(packages);
@@ -83,7 +86,7 @@ namespace TravelExpertsMVC.Controllers
                     ViewBag.ErrorMessage = "Please select the number of travellers";
                     return View(packages);
                 }
-   
+
             }
             else
             {
@@ -97,7 +100,7 @@ namespace TravelExpertsMVC.Controllers
 
 
         // GET: PackagesController/Details/5
-        
+
         public ActionResult Details(int id)
         {
             var products = PackagesManager.GetDetails(_db!, id);

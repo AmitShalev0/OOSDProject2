@@ -68,14 +68,13 @@
             </td>
             <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.BookingId }) |
-@*                     @Html.ActionLink("Details", "Details", new { id = item.BookingId }) | *@
                     @Html.ActionLink("Delete", "Delete", new { id = item.BookingId })
             </td>
         </tr>
 }
         <tr>
             <td colspan="8">Total:</td>
-            <dt></dt>
+            <td></td>
             <td>@ViewBag.Total.ToString("C")</td>
             <td><input type="submit" class="btn btn-primary" value="Pay" /></td>
         </tr>

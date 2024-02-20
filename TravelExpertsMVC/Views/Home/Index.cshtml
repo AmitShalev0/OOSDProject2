@@ -1,14 +1,14 @@
 ﻿
 <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
-<link href="~/css/homepage.css" rel="stylesheet" />
+<link href="~/css/HomePage.css" rel="stylesheet" />
 
 @{
     ViewData["Title"] = "Home Page";
 }
 <body>
 
-    <div class="jumbotron justify-content-center container rounded-3 p-5 ">
+@*     <div class="jumbotron justify-content-center container rounded-3 p-5 ">
         <h3 style="font-family:Cambria, Cochin, Georgia, Times, Times New Roman, serif" class="display-5 mt-1">
             <img width="50" height="50" src="~/images/travel-icon-213.png" />Welcome to a World of Adventure</h3>
             <br />
@@ -16,7 +16,16 @@
         <button type="submit" class="btn btn- bg-white  bg-opacity-50  justify-content-center p-0 rounded-3 ">
             <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register Here</a>
         </button>
+    </div> *@
+
+
+    <div class="image-button-container">
+        <img class="background-image" src="~/images/travel-icon-213.png" />
+        <button type="submit" class="register-button">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Register" asp-action="Register">Register Here</a>
+        </button>
     </div>
+
 
     <div class="container mt-4 col-md-4 bg-white bg-opacity-75 float-start rounded-3 p-3">
         Travel Experts is passionate about travel and are seeking new ways
@@ -42,7 +51,7 @@
 
 @* Enter Carousel: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp *@
 <body>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="position: fixed; bottom: 10%; width: 100%; text-align: center; left: 1%;">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="bottom: 10%; width: 100%; text-align: center; left: 1%;">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>

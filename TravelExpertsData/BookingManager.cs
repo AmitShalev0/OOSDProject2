@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TravelExpertsData.Migrations;
 
 namespace TravelExpertsData
 {
@@ -98,6 +97,12 @@ namespace TravelExpertsData
                 db.Bookings.Remove(booking);
                 db.SaveChanges();
             }
+        }
+
+        public static bool IsWholeNumber(double? number)
+        {
+            int intValue;
+            return number > 0 && number % 1 == 0 && int.TryParse(number.ToString(), out intValue);
         }
     }
 }

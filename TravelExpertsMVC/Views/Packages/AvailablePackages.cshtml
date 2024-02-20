@@ -3,15 +3,16 @@
 @{
     ViewData["Title"] = "Available Packages";
 }
+
 @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
 {
     <div class="alert alert-danger" role="alert">
         @ViewBag.ErrorMessage
     </div>
 }
+
 <h1>Available Packages</h1>
 <div class="container">
-
     <form asp-action="AvailablePackages" method="post" class="col-md-3">
 
         <div class="row  mb-3">
@@ -20,6 +21,7 @@
                 <option value="">Select number of travellers</option>
             </select>
         </div>
+
         <div class="row  mb-3">
             <p>Please select the travel type:</p>
             <select name="TravelTypes" asp-items="@ViewBag.TravelTypes" class="form-select">
@@ -27,29 +29,16 @@
             </select>
         </div>
 
-
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th></th><!-- Checkbox column -->
-                    <th>
-                        @Html.DisplayNameFor(model => model.PackageId)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PkgName)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PkgStartDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PkgEndDate)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PkgDesc)
-                    </th>
-                    <th>
-                        @Html.DisplayNameFor(model => model.PkgBasePrice)
-                    </th>
+                    <th>@Html.DisplayNameFor(model => model.PackageId)</th>
+                    <th>@Html.DisplayNameFor(model => model.PkgName)</th>
+                    <th>@Html.DisplayNameFor(model => model.PkgStartDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.PkgEndDate)</th>
+                    <th>@Html.DisplayNameFor(model => model.PkgDesc)</th>
+                    <th>@Html.DisplayNameFor(model => model.PkgBasePrice)</th>
                     <th></th>
                 </tr>
             </thead>
@@ -58,30 +47,16 @@
                 {
                     <tr>
                         <td>
-                            <input type="checkbox" name="selectedPackages" value="@item.PackageId" />
+                            <input type="checkbox" name="selectedPackages" value="@item.PackageId" @(TempData["SelectedPackages"] != null && ((int[])TempData["SelectedPackages"]).Contains(item.PackageId) ? "checked" : "") />
                         </td>
+                        <td>@Html.DisplayFor(modelItem => item.PackageId)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PkgName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PkgStartDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PkgEndDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PkgDesc)</td>
+                        <td>@Html.DisplayFor(modelItem => item.PkgBasePrice)</td>
                         <td>
-                            @Html.DisplayFor(modelItem => item.PackageId)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PkgName)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PkgStartDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PkgEndDate)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PkgDesc)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.PkgBasePrice)
-                        </td>
-                        <td>
-@*                             @Html.ActionLink("Edit", "Edit", new { id = item.PackageId }) | *@
                             @Html.ActionLink("Details", "Details", new { id = item.PackageId })
-@*                             @Html.ActionLink("Delete", "Delete", new { id = item.PackageId }) *@
                         </td>
                     </tr>
                 }

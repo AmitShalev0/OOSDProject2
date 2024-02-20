@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TravelExpertsData.Migrations
+namespace TravelExpertsData
 {
     public class BookingDTO
     {
@@ -15,6 +15,7 @@ namespace TravelExpertsData.Migrations
 
         [Column(TypeName = "datetime")]
         [Display(Name = "Booking Date")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime? BookingDate { get; set; }
 
         [Display(Name = "Package Name")]

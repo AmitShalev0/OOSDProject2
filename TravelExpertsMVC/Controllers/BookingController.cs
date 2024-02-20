@@ -17,11 +17,20 @@ namespace TravelExpertsMVC.Controllers
         [Authorize]
         public ActionResult MyBookings()//gets the packages of a certain customer
         {
-            int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
+            try
+            {
+                int? customerId = HttpContext.Session.GetInt32("CustomerId");
+                ViewBag.Total = PackagesManager.GetTotal(_db!, customerId);
 
-            List<BookingDTO> bookings = BookingManager.GetBookingsByCustomer(_db!, customerId);
-            return View(bookings);
+                List<BookingDTO> bookings = BookingManager.GetBookingsByCustomer(_db!, customerId);
+                return View(bookings);
+            }
+            catch 
+            {
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
+                return View();
+            }
         }
 
         // GET: BookingController/Details/5
@@ -35,24 +44,33 @@ namespace TravelExpertsMVC.Controllers
         // GET: BookingController/Edit/5
         public ActionResult Edit(int id)
         {
-            Booking booking;
-            booking = BookingManager.GetBookingById(_db!, id);
-
-            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
-            var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+            try
             {
-                Value = t.TripTypeId.ToString(),
-                Text = t.Ttname,
-                Selected = (t.TripTypeId == booking.TripTypeId) // Set Selected to true for the matching trip type
-            }).ToList();
+                Booking booking;
+                booking = BookingManager.GetBookingById(_db!, id);
 
-            ViewBag.TripTypes = tripTypeSelectList;
+                List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                {
+                    Value = t.TripTypeId.ToString(),
+                    Text = t.Ttname,
+                    Selected = (t.TripTypeId == booking.TripTypeId) // Set Selected to true for the matching trip type
+                }).ToList();
 
-            
-            if (booking != null)
-                return View(booking);
-            else
+                ViewBag.TripTypes = tripTypeSelectList;
+
+
+                if (booking != null)
+                    return View(booking);
+                else
+                    return View();
+            }
+            catch 
+            {
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
                 return View();
+            }
         }
 
         // POST: BookingController/Edit/5
@@ -66,20 +84,29 @@ namespace TravelExpertsMVC.Controllers
                 {
                     bool TCountValid = BookingManager.IsWholeNumber(newBooking.TravelerCount);
                     // Validate TravelerCount
-                    if (newBooking.TravelerCount < 0 || !TCountValid)
+                    try
                     {
-                        ModelState.AddModelError("TravelerCount", "Traveler count must be a positive whole number.");
-                        // Reload trip types to populate the dropdown again
-                        List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
-                        var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                        if (newBooking.TravelerCount < 0 || !TCountValid)
                         {
-                            Value = t.TripTypeId.ToString(),
-                            Text = t.Ttname,
-                            Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
-                        }).ToList();
+                            ModelState.AddModelError("TravelerCount", "Traveler count must be a positive whole number.");
+                            // Reload trip types to populate the dropdown again
+                            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                            var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                            {
+                                Value = t.TripTypeId.ToString(),
+                                Text = t.Ttname,
+                                Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
+                            }).ToList();
 
-                        ViewBag.TripTypes = tripTypeSelectList;
+                            ViewBag.TripTypes = tripTypeSelectList;
 
+                            return View(newBooking);
+                        }
+                    }
+                    catch 
+                    {
+                        TempData["Message"] = "Database connection error. Try again later.";
+                        TempData["IsError"] = true;
                         return View(newBooking);
                     }
 
@@ -98,18 +125,27 @@ namespace TravelExpertsMVC.Controllers
             }
             else
             {
-                // If ModelState is not valid, reload trip types to populate the dropdown again
-                List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
-                var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                try
                 {
-                    Value = t.TripTypeId.ToString(),
-                    Text = t.Ttname,
-                    Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
-                }).ToList();
+                    // If ModelState is not valid, reload trip types to populate the dropdown again
+                    List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                    var tripTypeSelectList = tripTypes.Select(t => new SelectListItem
+                    {
+                        Value = t.TripTypeId.ToString(),
+                        Text = t.Ttname,
+                        Selected = (t.TripTypeId == newBooking.TripTypeId) // Set Selected to true for the matching trip type
+                    }).ToList();
 
-                ViewBag.TripTypes = tripTypeSelectList;
+                    ViewBag.TripTypes = tripTypeSelectList;
 
-                return View(newBooking);
+                    return View(newBooking);
+                }
+                catch 
+                {
+                    TempData["Message"] = "Database connection error. Try again later.";
+                    TempData["IsError"] = true;
+                    return View(newBooking);
+                }
             }
         }
 

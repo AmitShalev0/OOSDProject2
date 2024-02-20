@@ -29,71 +29,91 @@ namespace TravelExpertsMVC.Controllers
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
-            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
-            var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
-            ViewBag.TravelTypes = ttypes;
+            try
+            {
+                List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
+                ViewBag.TravelTypes = ttypes;
 
-            int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            if (customerId == null)//if guest show all packages
-            {
-                List<PackagesDTO> Allpackages = PackagesManager.GetPackages(_db!);
-                return View(Allpackages);
+                int? customerId = HttpContext.Session.GetInt32("CustomerId");
+                if (customerId == null)//if guest show all packages
+                {
+                    List<PackagesDTO> Allpackages = PackagesManager.GetPackages(_db!);
+                    return View(Allpackages);
+                }
+                else//if customer show all packages that they already haven't purchased
+                {
+                    List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
+                    return View(packages);
+                }
             }
-            else//if customer show all packages that they already haven't purchased
+            catch
             {
-                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
-                return View(packages);
-            }  
+
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
+                return View();
+            } 
         }
 
         [Authorize]
         [HttpPost]
         public ActionResult AvailablePackages(IFormCollection form, int[] selectedPackages)//picks the id from the form
         {
-            List<int> numbers = Enumerable.Range(1, 10).ToList();
-            var Tnumbers = new SelectList(numbers).ToList();
-            ViewBag.TravellersCount = Tnumbers;//load the drop-down list
-            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
-            var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
-            ViewBag.TravelTypes = ttypes;
-            var Tcount = (form["TravellersCount"]);//get the number of passengers
-            string tripType = form["TravelTypes"].ToString();//get the trip type
-            int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
 
-            if (selectedPackages != null && selectedPackages.Length > 0)//package was selected
+            try
             {
-                TempData["SelectedPackages"] = selectedPackages;
-                if (Tcount != "")//a valid number was selected
+                List<int> numbers = Enumerable.Range(1, 10).ToList();
+                var Tnumbers = new SelectList(numbers).ToList();
+                ViewBag.TravellersCount = Tnumbers;//load the drop-down list
+                List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
+                var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
+                ViewBag.TravelTypes = ttypes;
+                var Tcount = (form["TravellersCount"]);//get the number of passengers
+                string tripType = form["TravelTypes"].ToString();//get the trip type
+                int? customerId = HttpContext.Session.GetInt32("CustomerId");
+                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
+
+                if (selectedPackages != null && selectedPackages.Length > 0)//package was selected
                 {
-                    int NoOfPassengers = Convert.ToInt32(Tcount);
-                    if (tripType != "")
+                    TempData["SelectedPackages"] = selectedPackages;
+                    if (Tcount != "")//a valid number was selected
                     {
-                        foreach (int PackageId in selectedPackages)//add the packages
+                        int NoOfPassengers = Convert.ToInt32(Tcount);
+                        if (tripType != "")
                         {
-                            BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                            foreach (int PackageId in selectedPackages)//add the packages
+                            {
+                                BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
+                            }
+                            return RedirectToAction("MyBookings", "Booking");
                         }
-                        return RedirectToAction("MyBookings", "Booking");
+                        else
+                        {
+                            ViewBag.ErrorMessage = "Please select the travel type";
+                            return View(packages);
+                        }
                     }
                     else
                     {
-                        ViewBag.ErrorMessage = "Please select the travel type";
+                        ViewBag.ErrorMessage = "Please select the number of travellers";
                         return View(packages);
                     }
+
                 }
                 else
                 {
-                    ViewBag.ErrorMessage = "Please select the number of travellers";
+                    ViewBag.ErrorMessage = "Please select a package.";
                     return View(packages);
                 }
-
-            }
-            else
-            {
-                ViewBag.ErrorMessage = "Please select a package.";
                 return View(packages);
             }
-            return View(packages);
+            catch 
+            {
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
+                return View();
+            }
         }
 
 
@@ -103,8 +123,17 @@ namespace TravelExpertsMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var products = PackagesManager.GetDetails(_db!, id);
-            return View(products);
+            try
+            {
+                var products = PackagesManager.GetDetails(_db!, id);
+                return View(products);
+            }
+            catch 
+            {
+                TempData["Message"] = "Database connection error. Try again later.";
+                TempData["IsError"] = true;
+                return RedirectToAction("Index", "Home");
+            }
         }
 
         //// GET: PackagesController/Delete/5

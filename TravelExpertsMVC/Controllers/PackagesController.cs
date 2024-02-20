@@ -10,9 +10,9 @@ namespace TravelExpertsMVC.Controllers
     public class PackagesController : Controller
     {
         //constructor for the controller for injecting the context db
-        private TravelExpertsContext? Db { get; set; }
+        private TravelExpertsContext? _db { get; set; }
         //added constructor
-        public PackagesController(TravelExpertsContext db) { this.Db = db; } //when the Packagescontrolelr is created it will get the context
+        public PackagesController(TravelExpertsContext db) { _db = db; } //when the Packagescontrolelr is created it will get the context
 
         //// GET: PackagesController
         //public ActionResult MyPackages()//gets the packages of a certain customer
@@ -29,19 +29,19 @@ namespace TravelExpertsMVC.Controllers
         {
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             ViewBag.TravellersCount = new SelectList(numbers);//load the drop-down list
-            List<TripType> tripTypes = TripTypeManager.GetTripTypes(Db!);
+            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
             var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
             ViewBag.TravelTypes = ttypes;
 
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
             if (customerId == null)//if guest show all packages
             {
-                List<PackagesDTO> Allpackages = PackagesManager.GetPackages(Db!);
+                List<PackagesDTO> Allpackages = PackagesManager.GetPackages(_db!);
                 return View(Allpackages);
             }
             else//if customer show all packages that they already haven't purchased
             {
-                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(Db!, customerId);
+                List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
                 return View(packages);
             }  
         }
@@ -53,13 +53,13 @@ namespace TravelExpertsMVC.Controllers
             List<int> numbers = Enumerable.Range(1, 10).ToList();
             var Tnumbers = new SelectList(numbers).ToList();
             ViewBag.TravellersCount = Tnumbers;//load the drop-down list
-            List<TripType> tripTypes = TripTypeManager.GetTripTypes(Db!);
+            List<TripType> tripTypes = TripTypeManager.GetTripTypes(_db!);
             var ttypes = new SelectList(tripTypes, "TripTypeId", "Ttname").ToList();
             ViewBag.TravelTypes = ttypes;
             var Tcount = (form["TravellersCount"]);//get the number of passengers
             string tripType = form["TravelTypes"].ToString();//get the trip type
             int? customerId = HttpContext.Session.GetInt32("CustomerId");
-            List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(Db!, customerId);
+            List<PackagesDTO> packages = PackagesManager.GetAvailablePackages(_db!, customerId);
 
             if (selectedPackages != null && selectedPackages.Length > 0)//package was selected
             {
@@ -71,7 +71,7 @@ namespace TravelExpertsMVC.Controllers
                     {
                         foreach (int PackageId in selectedPackages)//add the packages
                         {
-                            BookingManager.AddBooking(Db!, customerId, PackageId, NoOfPassengers, tripType);
+                            BookingManager.AddBooking(_db!, customerId, PackageId, NoOfPassengers, tripType);
                         }
                         return RedirectToAction("MyBookings", "Booking");
                     }
@@ -102,7 +102,7 @@ namespace TravelExpertsMVC.Controllers
 
         public ActionResult Details(int id)
         {
-            var products = PackagesManager.GetDetails(Db!, id);
+            var products = PackagesManager.GetDetails(_db!, id);
             return View(products);
         }
 

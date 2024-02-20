@@ -10,9 +10,9 @@ namespace TravelExpertsMVC.Controllers
     public class PackagesController : Controller
     {
         //constructor for the controller for injecting the context db
-        private TravelExpertsContext? _db { get; set; }
+        private TravelExpertsContext? Db { get; set; }
         //added constructor
-        public PackagesController(TravelExpertsContext db) { _db = db; } //when the Packagescontrolelr is created it will get the context
+        public PackagesController(TravelExpertsContext db) { this.Db = db; } //when the Packagescontrolelr is created it will get the context
 
         //// GET: PackagesController
         //public ActionResult MyPackages()//gets the packages of a certain customer

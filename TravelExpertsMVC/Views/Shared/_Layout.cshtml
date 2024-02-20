@@ -1,8 +1,8 @@
 ﻿@{
     string controller =
-        ViewContext.RouteData.Values["controller"].ToString();
+        ViewContext.RouteData.Values["controller"]?.ToString();
     string action =
-        ViewContext.RouteData.Values["action"].ToString();
+        ViewContext.RouteData.Values["action"]?.ToString();
 }
 <!DOCTYPE html>
 <html lang="en">
